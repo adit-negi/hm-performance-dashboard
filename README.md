@@ -1,6 +1,18 @@
-# Half-marathon training dashboard
+# Performance Lab
 
-This is a dependency-free local website for the San Jose half-marathon block.
+This is Adit's dependency-free, installable endurance and strength coaching app.
+
+## Production app
+
+The persistent public app is deployed through GitHub Pages:
+
+<https://adit-negi.github.io/hm-performance-dashboard/>
+
+Source repository:
+
+<https://github.com/adit-negi/hm-performance-dashboard>
+
+On iPhone, open the production URL in Safari, then use **Share → Add to Home Screen**. The service worker keeps the most recently loaded version available offline.
 
 ## Open it
 
@@ -18,16 +30,18 @@ The site includes a web-app manifest and offline cache. On iPhone, use Safari's 
 
 The default host is private to the local network. Public exposure requires the athlete's explicit authorization because the dashboard includes health and training information.
 
-## Current public tunnel
-
-The athlete explicitly authorized public, unpassworded access on August 30, 2026. The current Cloudflare quick-tunnel URL is:
-
-<https://significant-other-left-reserve.trycloudflare.com>
-
-The URL remains available only while the local Python server and `cloudflared` process are running. Quick-tunnel hostnames are temporary and change after a tunnel restart. Cloudflare documents quick tunnels as development/testing infrastructure rather than production hosting.
-
 ## Updating the plan
 
 The interface reads its structured content from `data.js`. Coaching updates should update both `HM_CONTEXT.md` and this file so the dashboard remains the visual source of truth. Workout completion toggles are stored only in the browser's local storage.
+
+After validating a change, publish it with:
+
+```bash
+git add .
+git commit -m "Update training plan"
+git push origin main
+```
+
+GitHub Pages deploys `main` automatically. No tunnel or always-on local process is required.
 
 Garmin data is intentionally not fetched directly from the browser because account credentials must never be exposed client-side. Recovery values are added after the read-only Garmin coaching connector has been reviewed.
