@@ -1,35 +1,35 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 7, 2026 · lower-body session restored",
+  updatedAt: "September 7, 2026 · after strength/row/swim",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Ready for easy cycling · Sep 7",
+    label: "Training absorbed · Sep 7",
     metrics: [
-      { label: "Readiness", value: "95", unit: "prime", tone: "good" },
+      { label: "Readiness", value: "83", unit: "high", tone: "good" },
       { label: "Overnight HRV", value: "94", unit: "ms", tone: "good" },
-      { label: "Resting HR", value: "49", unit: "bpm", tone: "good" },
-      { label: "Body Battery", value: "82", unit: "current", tone: "good" }
+      { label: "Body Battery", value: "52", unit: "current", tone: "neutral" },
+      { label: "Session load", value: "96", unit: "combined", tone: "neutral" }
     ],
-    note: "Recovery supports one minimum-effective-dose lower session. This preserves long-term strength without turning Monday into a high-fatigue Candito leg day before Wednesday threshold."
+    note: "Strength remained cardiovascularly cheap, but rowing and the 1,100 m swim added moderate aerobic load. Readiness remains high; Tuesday stays easy and strides depend on local leg response."
   },
   currentWorkout: {
-    date: "2026-09-07",
-    type: "rest",
-    title: "Lower-body maintenance",
+    date: "2026-09-08",
+    type: "easy",
+    title: "Easy run + conditional strides",
     details: [
-      { label: "Power clean", value: "4 × 2 @ 60–70% · RPE 5–6" },
-      { label: "Back squat", value: "3 × 3 @ 70–75% · RPE 6–7" },
-      { label: "Unilateral", value: "Bulgarian split squat 2 × 5 / side · RPE 6" },
-      { label: "Lower leg", value: "Soleus 3 × 10–15 + standing calf 2 × 8–12" },
-      { label: "Optional", value: "20–30 min easy swim · no running or cycling" }
+      { label: "Total", value: "7 miles" },
+      { label: "Effort", value: "RPE 2–3 · conversational" },
+      { label: "HR context", value: "Usually 145–160 · do not chase Garmin Z2" },
+      { label: "Strides", value: "6 × 20 sec only if soreness ≤2/10 and legs springy" },
+      { label: "Recovery", value: "Full 60–90 sec walk/jog between strides" }
     ],
-    purpose: "Maintain force production and lower-limb tissue capacity with the smallest useful fatigue dose. Every repetition should remain fast and technically clean so Wednesday quality stays viable."
+    purpose: "Absorb Monday's lower-body and cross-training load while preserving run frequency. Strides are neuromuscular preparation, not mandatory mileage or intensity."
   },
   week: {
     label: "SEP 7 — SEP 13",
     targetMiles: 45,
     days: [
-      { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Run rest + lower maintenance", detail: "Cleans + squat + unilateral/calf work · optional easy swim" },
+      { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true },
       { date: "2026-09-08", day: "Tue", miles: 7, type: "easy", title: "Easy + strides", detail: "6 × 20 sec relaxed · full recovery" },
       { date: "2026-09-09", day: "Wed", miles: 9, type: "quality", title: "Threshold density", detail: "4 × 8 min @ 8.1 mph · 2 min jog · final 8.2 only if controlled", key: true },
       { date: "2026-09-10", day: "Thu", miles: 8, type: "easy", title: "Aerobic volume", detail: "Conversational · no pace target" },
