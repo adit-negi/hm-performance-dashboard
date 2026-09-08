@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101713" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Performance Lab" />
+    <title>Adit Performance Lab</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Training dashboard home">
+          <span class="brand-mark">A</span>
+          <span>Performance Lab</span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot"></span>
+          <span id="updatedAt">Updated recently</span>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">A RACE · ROCK 'N' ROLL SAN JOSE</p>
+            <h1>Break <span>1:35</span></h1>
+            <p class="hero-subtitle">Build threshold durability. Preserve the legs. Arrive ready to race the final 5K.</p>
+            <div class="goal-pills">
+              <span>Oct 4, 2026</span>
+              <span>7:15 / mi</span>
+              <span>13.1 miles</span>
+            </div>
+          </div>
+          <div class="countdown-card" aria-label="Race countdown">
+            <span class="countdown-label">Race in</span>
+            <strong id="daysToRace">—</strong>
+            <span>days</span>
+            <div class="countdown-track"><i id="countdownProgress"></i></div>
+          </div>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="card next-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">NEXT SESSION</p>
+                <h2 id="nextWorkoutTitle">Loading workout…</h2>
+              </div>
+              <span class="workout-icon" id="nextWorkoutIcon">↗</span>
+            </div>
+            <div id="nextWorkoutDetails" class="workout-details"></div>
+            <div class="coach-note">
+              <span>Coach's intent</span>
+              <p id="nextWorkoutPurpose"></p>
+            </div>
+          </article>
+
+          <article class="card status-card">
+            <div class="card-heading compact">
+              <div>
+                <p class="eyebrow">ATHLETE STATUS</p>
+                <h2>Ready, with context</h2>
+              </div>
+              <span class="status-badge">Balanced</span>
+            </div>
+            <div id="metricGrid" class="metric-grid"></div>
+            <p class="data-caveat" id="recoveryNote"></p>
+          </article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" id="weekRange">CURRENT TRAINING WEEK</p>
+              <h2>The week ahead</h2>
+            </div>
+            <div class="week-total"><strong id="weekMiles">43</strong><span>planned miles</span></div>
+          </div>
+          <div id="weekGrid" class="week-grid"></div>
+        </section>
+
+        <section class="section-block strength-section" id="strength">
+          <div class="section-heading strength-heading">
+            <div>
+              <p class="eyebrow">MODIFIED CANDITO</p>
+              <h2>Strength that serves the race</h2>
+            </div>
+            <div class="strength-status"><strong>3</strong><span>sessions · 1 lower</span></div>
+          </div>
+          <p class="section-intro">Keep the main strength signal. Remove grinding and redundant hypertrophy, retain one lower-body exposure, and place it where it preserves key running and the weekend long run.</p>
+          <div id="strengthGrid" class="strength-grid"></div>
+          <div id="strengthGuardrails" class="strength-guardrails"></div>
+        </section>
+
+        <section class="lower-grid">
+          <article class="card volume-card">
+            <div class="card-heading compact">
+              <div>
+                <p class="eyebrow">LOAD PROGRESSION</p>
+                <h2>Build, peak, sharpen</h2>
+              </div>
+            </div>
+            <div id="volumeChart" class="volume-chart"></div>
+          </article>
+
+          <article class="card race-card">
+            <p class="eyebrow">CURRENT MODEL</p>
+            <div class="fitness-line">
+              <div>
+                <span>Current HM fitness</span>
+                <strong>1:36–1:40</strong>
+              </div>
+              <div>
+                <span>Race target</span>
+                <strong class="accent">1:34:59</strong>
+              </div>
+            </div>
+            <div class="race-divider"></div>
+            <p class="limiter"><span>Primary limiter</span> Run-specific threshold durability</p>
+            <p class="race-copy">Aerobic capacity is sufficient. The block succeeds if goal pace remains economical after mile 8—not if easy mileage becomes unnecessarily hard.</p>
+          </article>
+        </section>
+
+        <section class="section-block rules-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">EXECUTION RULES</p>
+              <h2>Non-negotiables</h2>
+            </div>
+          </div>
+          <div id="rulesGrid" class="rules-grid"></div>
+        </section>
+      </main>
+
+      <footer>
+        <span>Performance Lab · San Jose HM block</span>
+        <span>Garmin-informed, coach-adjusted</span>
+      </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Adit Performance Lab",
+  "short_name": "Performance Lab",
+  "description": "Garmin-informed endurance and strength training dashboard",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f1f1e9",
+  "theme_color": "#0c3e29",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
