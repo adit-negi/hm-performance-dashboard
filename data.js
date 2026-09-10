@@ -1,37 +1,38 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 7, 2026 · after strength/row/swim",
+  updatedAt: "September 9, 2026 · threshold retained",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Training absorbed · Sep 7",
+    label: "Wearable moderate · athlete ready · Sep 9",
     metrics: [
-      { label: "Readiness", value: "83", unit: "high", tone: "good" },
-      { label: "Overnight HRV", value: "94", unit: "ms", tone: "good" },
-      { label: "Body Battery", value: "52", unit: "current", tone: "neutral" },
-      { label: "Session load", value: "96", unit: "combined", tone: "neutral" }
+      { label: "Readiness", value: "50", unit: "moderate", tone: "warn" },
+      { label: "Overnight HRV", value: "80", unit: "ms", tone: "good" },
+      { label: "Resting HR", value: "50", unit: "bpm", tone: "good" },
+      { label: "Sleep", value: "6:05", unit: "score 76", tone: "warn" }
     ],
-    note: "Strength remained cardiovascularly cheap, but rowing and the 1,100 m swim added moderate aerobic load. Readiness remains high; Tuesday stays easy and strides depend on local leg response."
+    note: "Readiness is 50 after short sleep, but HRV and RHR are normal and the athlete reports fresh legs and body. Proceed with threshold using execution guardrails; subjective/local readiness outranks the isolated score."
   },
   currentWorkout: {
-    date: "2026-09-08",
-    type: "easy",
-    title: "Easy run + conditional strides",
+    date: "2026-09-09",
+    type: "quality",
+    title: "4 × 8-minute threshold",
     details: [
-      { label: "Total", value: "7 miles" },
-      { label: "Effort", value: "RPE 2–3 · conversational" },
-      { label: "HR context", value: "Usually 145–160 · do not chase Garmin Z2" },
-      { label: "Strides", value: "6 × 20 sec only if soreness ≤2/10 and legs springy" },
-      { label: "Recovery", value: "Full 60–90 sec walk/jog between strides" }
+      { label: "Total", value: "Approximately 9 miles" },
+      { label: "Warm-up", value: "2 mi @ 5.4–5.8 mph + drills + 3–4 pickups" },
+      { label: "Main work", value: "4 × 8 min @ 8.1 mph" },
+      { label: "Recovery", value: "2 min easy jog @ 4.5–5.0 mph" },
+      { label: "Progression", value: "Rep 4 may reach 8.2 mph only if rep 3 is controlled" },
+      { label: "Treadmill", value: "0.5% incline · strong fans" }
     ],
-    purpose: "Absorb Monday's lower-body and cross-training load while preserving run frequency. Strides are neuromuscular preparation, not mandatory mileage or intensity."
+    purpose: "Increase threshold density while keeping speed controlled. The adaptation comes from completing all four repetitions with stable mechanics—not from accelerating early."
   },
   week: {
     label: "SEP 7 — SEP 13",
     targetMiles: 45,
     days: [
       { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true },
-      { date: "2026-09-08", day: "Tue", miles: 7, type: "easy", title: "Easy + strides", detail: "6 × 20 sec relaxed · full recovery" },
-      { date: "2026-09-09", day: "Wed", miles: 9, type: "quality", title: "Threshold density", detail: "4 × 8 min @ 8.1 mph · 2 min jog · final 8.2 only if controlled", key: true },
+      { date: "2026-09-08", day: "Tue", miles: 7.55, type: "easy", title: "Easy + strides complete", detail: "10:35/mi · HR 151 · 4 fast segments · strength before", completed: true },
+      { date: "2026-09-09", day: "Wed", miles: 9, type: "quality", title: "Threshold density", detail: "4 × 8 min @ 8.1 mph · 2 min @ 4.5–5.0 · final 8.2 only if controlled", key: true },
       { date: "2026-09-10", day: "Thu", miles: 8, type: "easy", title: "Aerobic volume", detail: "Conversational · no pace target" },
       { date: "2026-09-11", day: "Fri", miles: 4, type: "easy", title: "Easy or soccer", detail: "If soccer happens, omit the run" },
       { date: "2026-09-12", day: "Sat", miles: 4, type: "easy", title: "Recovery", detail: "Very easy · keep legs quiet" },

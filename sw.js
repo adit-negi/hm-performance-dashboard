@@ -1,4 +1,4 @@
-const CACHE = "hm-dashboard-v2";
+const CACHE = "hm-dashboard-v3";
 const ASSETS = ["./", "./index.html", "./styles.css", "./app.js", "./data.js", "./manifest.json", "./icon.svg"];
 
 self.addEventListener("install", (event) => {
@@ -15,6 +15,13 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.pathname.endsWith("/data.js")) {
+    event.respondWith(
+      fetch(event.request, { cache: "no-store" }).catch(() => caches.match("./data.js"))
+    );
+    return;
+  }
   event.respondWith(
     fetch(event.request)
       .then((response) => {
