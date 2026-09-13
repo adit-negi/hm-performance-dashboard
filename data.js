@@ -1,30 +1,30 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 9, 2026 · threshold retained",
+  updatedAt: "September 13, 2026 · weekly review",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Wearable moderate · athlete ready · Sep 9",
+    label: "Recovered and ready · Sep 13",
     metrics: [
-      { label: "Readiness", value: "50", unit: "moderate", tone: "warn" },
-      { label: "Overnight HRV", value: "80", unit: "ms", tone: "good" },
+      { label: "Readiness", value: "77", unit: "high", tone: "good" },
+      { label: "Overnight HRV", value: "83", unit: "ms · balanced", tone: "good" },
       { label: "Resting HR", value: "50", unit: "bpm", tone: "good" },
-      { label: "Sleep", value: "6:05", unit: "score 76", tone: "warn" }
+      { label: "Sleep", value: "7:40", unit: "score 88", tone: "good" }
     ],
-    note: "Readiness is 50 after short sleep, but HRV and RHR are normal and the athlete reports fresh legs and body. Proceed with threshold using execution guardrails; subjective/local readiness outranks the isolated score."
+    note: "Recovery has normalized after Wednesday's quality session and Friday soccer. The athlete feels good, HRV is balanced, RHR is baseline, and readiness is high. Proceed with 13 easy, but keep it fully conversational after Saturday's strength and 6.61-mile run."
   },
   currentWorkout: {
-    date: "2026-09-09",
-    type: "quality",
-    title: "4 × 8-minute threshold",
+    date: "2026-09-13",
+    type: "long",
+    title: "13-mile easy long run",
     details: [
-      { label: "Total", value: "Approximately 9 miles" },
-      { label: "Warm-up", value: "2 mi @ 5.4–5.8 mph + drills + 3–4 pickups" },
-      { label: "Main work", value: "4 × 8 min @ 8.1 mph" },
-      { label: "Recovery", value: "2 min easy jog @ 4.5–5.0 mph" },
-      { label: "Progression", value: "Rep 4 may reach 8.2 mph only if rep 3 is controlled" },
-      { label: "Treadmill", value: "0.5% incline · strong fans" }
+      { label: "Total", value: "13 miles · fully easy" },
+      { label: "Effort", value: "RPE 2–3 · full-sentence conversation" },
+      { label: "Pace", value: "No target · hold back early and late" },
+      { label: "HR context", value: "Usually 145–160 · do not chase a hard cap" },
+      { label: "Fuel", value: "Start fed · 30–45 g carbohydrate/hour" },
+      { label: "Route", value: "Prefer sheltered/controlled · avoid exposed Baylands wind" }
     ],
-    purpose: "Increase threshold density while keeping speed controlled. The adaptation comes from completing all four repetitions with stable mechanics—not from accelerating early."
+    purpose: "Build easy aerobic durability and complete an approximately 44-mile peak week while absorbing Wednesday threshold, Friday soccer, and Saturday strength. No fast finish today."
   },
   week: {
     label: "SEP 7 — SEP 13",
@@ -32,10 +32,10 @@ window.TRAINING_DATA = {
     days: [
       { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true },
       { date: "2026-09-08", day: "Tue", miles: 7.55, type: "easy", title: "Easy + strides complete", detail: "10:35/mi · HR 151 · 4 fast segments · strength before", completed: true },
-      { date: "2026-09-09", day: "Wed", miles: 9, type: "quality", title: "Threshold density", detail: "4 × 8 min @ 8.1 mph · 2 min @ 4.5–5.0 · final 8.2 only if controlled", key: true },
-      { date: "2026-09-10", day: "Thu", miles: 8, type: "easy", title: "Aerobic volume", detail: "Conversational · no pace target" },
-      { date: "2026-09-11", day: "Fri", miles: 4, type: "easy", title: "Easy or soccer", detail: "If soccer happens, omit the run" },
-      { date: "2026-09-12", day: "Sat", miles: 4, type: "easy", title: "Recovery", detail: "Very easy · keep legs quiet" },
+      { date: "2026-09-09", day: "Wed", miles: 9.02, type: "quality", title: "Threshold complete", detail: "4 × 8 min · HR 170 avg / 208 max · load 295 · strong reserve", key: true, completed: true },
+      { date: "2026-09-10", day: "Thu", miles: 8.01, type: "easy", title: "Aerobic volume complete", detail: "10:43/mi · HR 147 · load 49", completed: true },
+      { date: "2026-09-11", day: "Fri", miles: 0, type: "quality", title: "Soccer complete", detail: "2:02 total · 5.84 mi movement · HR 105 avg / 185 max · load 30", completed: true },
+      { date: "2026-09-12", day: "Sat", miles: 6.61, type: "easy", title: "Easy + strength complete", detail: "11:20/mi · HR 144 · 50 min strength before · combined load 57", completed: true },
       { date: "2026-09-13", day: "Sun", miles: 13, type: "long", title: "Long run", detail: "Fully easy · fuel 30–45 g carbohydrate/hour", key: true }
     ]
   },
@@ -92,8 +92,8 @@ window.TRAINING_DATA = {
   },
   volume: [
     { label: "Aug 24", miles: 39.5, state: "complete" },
-    { label: "Aug 31", miles: 43, state: "current" },
-    { label: "Sep 7", miles: 45, state: "planned" },
+    { label: "Aug 31", miles: 38.6, state: "complete" },
+    { label: "Sep 7", miles: 44.2, state: "current" },
     { label: "Sep 14", miles: 46, state: "peak" },
     { label: "Sep 21", miles: 34, state: "taper" },
     { label: "Race", miles: 27, state: "race" }

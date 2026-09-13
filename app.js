@@ -160,7 +160,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260909-threshold").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260913-week-review").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();
