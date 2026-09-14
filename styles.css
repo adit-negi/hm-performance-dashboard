@@ -76,10 +76,21 @@ h3 { font: 700 15px/1.25 Manrope, sans-serif; letter-spacing: -.02em; }
 .week-total { display: flex; align-items: baseline; gap: 8px; }
 .week-total strong { color: var(--green); font: 800 40px/1 Manrope, sans-serif; letter-spacing: -.05em; }
 .week-total span { color: var(--muted); font-size: 12px; }
-.week-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
-.day-card { position: relative; min-height: 265px; padding: 17px; display: flex; flex-direction: column; overflow: hidden; background: rgba(251,251,246,.82); border: 1px solid var(--line); border-radius: 14px; transition: transform .2s, box-shadow .2s; }
+.timeline-actions { display: flex; align-items: flex-end; gap: 18px; }
+.scroll-controls { display: flex; gap: 6px; }
+.scroll-controls button { width: 38px; height: 38px; color: var(--green-dark); background: var(--card); border: 1px solid var(--line); border-radius: 50%; cursor: pointer; font: 700 17px Manrope, sans-serif; }
+.scroll-controls button:hover { color: var(--lime); background: var(--green-dark); border-color: var(--green-dark); }
+.timeline-hint { margin: -8px 0 17px; color: var(--muted); font-size: 12px; }
+.week-grid { display: flex; gap: 10px; overflow-x: auto; padding: 3px 2px 16px; scroll-snap-type: x proximity; scrollbar-color: var(--green) #dfe3d9; scrollbar-width: thin; overscroll-behavior-x: contain; }
+.week-grid::-webkit-scrollbar { height: 7px; }
+.week-grid::-webkit-scrollbar-track { background: #dfe3d9; border-radius: 99px; }
+.week-grid::-webkit-scrollbar-thumb { background: var(--green); border-radius: 99px; }
+.day-card { position: relative; min-width: 198px; width: 198px; min-height: 265px; padding: 17px; display: flex; flex-direction: column; overflow: hidden; background: rgba(251,251,246,.82); border: 1px solid var(--line); border-radius: 14px; cursor: pointer; scroll-snap-align: start; transition: transform .2s, box-shadow .2s, border-color .2s; }
 .day-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(25,38,29,.08); }
+.day-card:focus-visible { outline: 3px solid rgba(20,107,67,.28); outline-offset: 2px; }
+.day-card.selected { opacity: 1; border: 2px solid var(--green-dark); box-shadow: 0 13px 34px rgba(12,62,41,.18); transform: translateY(-3px); }
 .day-card.key { border-color: var(--green); background: #f8fff0; }
+.day-card.key.selected { border-color: var(--green-dark); }
 .day-card.completed { opacity: .62; }
 .day-card.completed::after { content: ""; position: absolute; left: 12px; right: 12px; top: 49%; border-top: 1px solid var(--green); transform: rotate(-8deg); }
 .day-top { display: flex; justify-content: space-between; align-items: flex-start; }
@@ -95,6 +106,7 @@ h3 { font: 700 15px/1.25 Manrope, sans-serif; letter-spacing: -.02em; }
 .complete-toggle { position: relative; z-index: 2; margin-top: auto; padding: 0; display: flex; align-items: center; gap: 7px; color: var(--muted); background: none; border: 0; font: 600 10px "DM Sans", sans-serif; cursor: pointer; }
 .complete-toggle span { width: 15px; height: 15px; display: grid; place-items: center; border: 1px solid #b8c0b8; border-radius: 50%; color: white; font-size: 9px; }
 .completed .complete-toggle span { background: var(--green); border-color: var(--green); }
+.week-marker { display: inline-block; align-self: flex-start; margin: -5px 0 10px; padding: 4px 7px; color: var(--green); background: #e1eee0; border-radius: 999px; font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 
 .strength-heading { margin-bottom: 14px; }
 .strength-status { display: flex; align-items: baseline; gap: 8px; }
@@ -162,7 +174,6 @@ footer { height: 75px; display: flex; justify-content: space-between; align-item
 
 @media (max-width: 1020px) {
   .page-shell { padding: 0 24px; }
-  .week-grid { grid-template-columns: repeat(4, 1fr); }
   .strength-grid { grid-template-columns: 1fr 1fr; }
   .strength-card.lower { grid-column: 1 / -1; }
   .strength-guardrails { grid-template-columns: 1fr 1fr; }
@@ -181,13 +192,15 @@ footer { height: 75px; display: flex; justify-content: space-between; align-item
   .countdown-track { grid-column: 1 / -1; width: 100%; }
   .detail-row { grid-template-columns: 1fr; gap: 5px; }
   .dashboard-grid, .lower-grid { grid-template-columns: 1fr; }
-  .week-grid { display: flex; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
-  .day-card { min-width: 178px; scroll-snap-align: start; }
+  .week-grid { scroll-snap-type: x mandatory; }
+  .day-card { min-width: min(78vw, 240px); width: min(78vw, 240px); }
   .section-block, .lower-grid { margin-top: 0; padding-top: 52px; }
   .lower-grid { gap: 14px; }
   .rules-grid { grid-template-columns: 1fr; }
   .section-heading { align-items: flex-start; }
   .week-total { flex-direction: column; align-items: flex-end; gap: 0; }
+  .timeline-actions { gap: 10px; }
+  .scroll-controls { display: none; }
   .strength-status { flex-direction: column; align-items: flex-end; gap: 0; }
   .strength-grid { grid-template-columns: 1fr; }
   .strength-card.lower { grid-column: auto; }
