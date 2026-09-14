@@ -218,7 +218,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260913-timeline").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260913-long-term").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();

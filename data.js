@@ -1,5 +1,5 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 13, 2026 · interactive peak week",
+  updatedAt: "September 13, 2026 · long-term priority reset",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
