@@ -19,8 +19,23 @@
     $("#updatedAt").textContent = `Plan updated ${data.updatedAt}`;
   }
 
-  function renderCurrentWorkout() {
-    const workout = data.currentWorkout;
+  const workoutFromDay = (day) =>
+    day.workout || {
+      date: day.date,
+      type: day.type,
+      title: day.title,
+      details: [
+        { label: "Date", value: formatDate(day.date) },
+        { label: "Distance", value: day.miles ? `${day.miles} miles` : "No running mileage" },
+        { label: "Session", value: day.detail }
+      ],
+      purpose: day.completed
+        ? "Completed session. Select an upcoming card to view its full prescription."
+        : "Follow the prescribed effort and preserve the purpose of the session."
+    };
+
+  function renderCurrentWorkout(workout = data.currentWorkout, completed = false) {
+    $("#workoutEyebrow").textContent = completed ? "COMPLETED SESSION" : "SELECTED SESSION";
     $("#nextWorkoutTitle").textContent = workout.title;
     $("#nextWorkoutIcon").textContent = workout.type === "long" ? "↗" : workout.type === "rest" ? "○" : "⚡";
     $("#nextWorkoutPurpose").textContent = workout.purpose;
@@ -51,13 +66,16 @@
 
   function renderWeek() {
     const stored = JSON.parse(localStorage.getItem("hm-dashboard-completed") || "{}");
+    const selectedDate = localStorage.getItem("hm-dashboard-selected") || data.currentWorkout.date;
     $("#weekRange").textContent = data.week.label || "CURRENT TRAINING WEEK";
     $("#weekMiles").textContent = data.week.targetMiles;
     $("#weekGrid").innerHTML = data.week.days
       .map((day) => {
         const completed = Boolean(day.completed || stored[day.date]);
         return `
-          <article class="day-card ${day.type} ${day.key ? "key" : ""} ${completed ? "completed" : ""}">
+          <article class="day-card ${day.type} ${day.key ? "key" : ""} ${completed ? "completed" : ""} ${selectedDate === day.date ? "selected" : ""}"
+            data-session-date="${day.date}" role="button" tabindex="0" aria-label="Open ${day.day} ${day.title}" aria-pressed="${selectedDate === day.date}">
+            ${day.weekMarker ? `<span class="week-marker">${day.weekMarker}</span>` : ""}
             <div class="day-top">
               <div><strong>${day.day}</strong><span>${formatDate(day.date).split(", ")[1]}</span></div>
               ${day.key ? '<span class="key-label">KEY</span>' : ""}
@@ -73,13 +91,52 @@
       .join("");
 
     document.querySelectorAll(".complete-toggle").forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
         const state = JSON.parse(localStorage.getItem("hm-dashboard-completed") || "{}");
         state[button.dataset.date] = !state[button.dataset.date];
         localStorage.setItem("hm-dashboard-completed", JSON.stringify(state));
         renderWeek();
       });
     });
+
+    const selectSession = (card) => {
+      const day = data.week.days.find((item) => item.date === card.dataset.sessionDate);
+      if (!day) return;
+      localStorage.setItem("hm-dashboard-selected", day.date);
+      document.querySelectorAll(".day-card").forEach((item) => {
+        const selected = item === card;
+        item.classList.toggle("selected", selected);
+        item.setAttribute("aria-pressed", selected);
+      });
+      renderCurrentWorkout(workoutFromDay(day), Boolean(day.completed || stored[day.date]));
+      document.querySelector(".next-card").scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+
+    document.querySelectorAll(".day-card").forEach((card) => {
+      card.addEventListener("click", () => selectSession(card));
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          selectSession(card);
+        }
+      });
+    });
+
+    const selectedDay = data.week.days.find((day) => day.date === selectedDate);
+    if (selectedDay) renderCurrentWorkout(workoutFromDay(selectedDay), Boolean(selectedDay.completed || stored[selectedDate]));
+
+    requestAnimationFrame(() => {
+      const active = document.querySelector(".day-card.selected");
+      if (active) $("#weekGrid").scrollLeft = active.offsetLeft - ($("#weekGrid").clientWidth - active.offsetWidth) / 2;
+    });
+  }
+
+  function bindTimelineControls() {
+    const grid = $("#weekGrid");
+    const move = (direction) => grid.scrollBy({ left: direction * Math.min(grid.clientWidth * 0.75, 720), behavior: "smooth" });
+    $("#sessionPrev").addEventListener("click", () => move(-1));
+    $("#sessionNext").addEventListener("click", () => move(1));
   }
 
   function renderVolume() {
@@ -156,11 +213,12 @@
   renderCurrentWorkout();
   renderRecovery();
   renderWeek();
+  bindTimelineControls();
   renderStrength();
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260913-long-run").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260913-timeline").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();
