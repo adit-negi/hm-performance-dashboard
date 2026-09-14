@@ -1,30 +1,30 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 13, 2026 · weekly review",
+  updatedAt: "September 13, 2026 · long run complete",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Recovered and ready · Sep 13",
+    label: "Long run absorbed well · recover next",
     metrics: [
-      { label: "Readiness", value: "77", unit: "high", tone: "good" },
-      { label: "Overnight HRV", value: "83", unit: "ms · balanced", tone: "good" },
-      { label: "Resting HR", value: "50", unit: "bpm", tone: "good" },
-      { label: "Sleep", value: "7:40", unit: "score 88", tone: "good" }
+      { label: "Long run", value: "13.18", unit: "miles", tone: "good" },
+      { label: "Average HR", value: "153", unit: "bpm", tone: "good" },
+      { label: "Average pace", value: "10:51", unit: "/mi", tone: "good" },
+      { label: "End stamina", value: "69", unit: "%", tone: "good" }
     ],
-    note: "Recovery has normalized after Wednesday's quality session and Friday soccer. The athlete feels good, HRV is balanced, RHR is baseline, and readiness is high. Proceed with 13 easy, but keep it fully conversational after Saturday's strength and 6.61-mile run."
+    note: "The second half was approximately 4% faster while HR rose only about 2 bpm. Compared with September 4, this was longer, lower-HR, less costly, and showed materially better aerobic durability. The week closes at 44.37 running miles."
   },
   currentWorkout: {
-    date: "2026-09-13",
-    type: "long",
-    title: "13-mile easy long run",
+    date: "2026-09-14",
+    type: "rest",
+    title: "Run-rest and absorb",
     details: [
-      { label: "Total", value: "13 miles · fully easy" },
-      { label: "Effort", value: "RPE 2–3 · full-sentence conversation" },
-      { label: "Pace", value: "No target · hold back early and late" },
-      { label: "HR context", value: "Usually 145–160 · do not chase a hard cap" },
-      { label: "Fuel", value: "Start fed · 30–45 g carbohydrate/hour" },
-      { label: "Route", value: "Prefer sheltered/controlled · avoid exposed Baylands wind" }
+      { label: "Running", value: "Rest" },
+      { label: "Optional swim", value: "25–35 min genuinely easy · RPE 2" },
+      { label: "Strength", value: "Upper body only if fresh · cap at RPE 7" },
+      { label: "Lower body", value: "None after the 13.18-mile run" },
+      { label: "Recovery", value: "Carbohydrate + 30–40 g protein · hydrate" },
+      { label: "Decision", value: "Tuesday depends on morning legs and recovery" }
     ],
-    purpose: "Build easy aerobic durability and complete an approximately 44-mile peak week while absorbing Wednesday threshold, Friday soccer, and Saturday strength. No fast finish today."
+    purpose: "Consolidate a successful 44.37-mile week and preserve the quality of the final race-specific build. Fitness is gained during recovery from the work, not by adding Monday mileage."
   },
   week: {
     label: "SEP 7 — SEP 13",
@@ -36,7 +36,7 @@ window.TRAINING_DATA = {
       { date: "2026-09-10", day: "Thu", miles: 8.01, type: "easy", title: "Aerobic volume complete", detail: "10:43/mi · HR 147 · load 49", completed: true },
       { date: "2026-09-11", day: "Fri", miles: 0, type: "quality", title: "Soccer complete", detail: "2:02 total · 5.84 mi movement · HR 105 avg / 185 max · load 30", completed: true },
       { date: "2026-09-12", day: "Sat", miles: 6.61, type: "easy", title: "Easy + strength complete", detail: "11:20/mi · HR 144 · 50 min strength before · combined load 57", completed: true },
-      { date: "2026-09-13", day: "Sun", miles: 13, type: "long", title: "Long run", detail: "Fully easy · fuel 30–45 g carbohydrate/hour", key: true }
+      { date: "2026-09-13", day: "Sun", miles: 13.18, type: "long", title: "Long run complete", detail: "10:51/mi · HR 153 · load 123 · minimal drift · end stamina 69", key: true, completed: true }
     ]
   },
   strength: {
@@ -93,8 +93,8 @@ window.TRAINING_DATA = {
   volume: [
     { label: "Aug 24", miles: 39.5, state: "complete" },
     { label: "Aug 31", miles: 38.6, state: "complete" },
-    { label: "Sep 7", miles: 44.2, state: "current" },
-    { label: "Sep 14", miles: 46, state: "peak" },
+    { label: "Sep 7", miles: 44.4, state: "complete" },
+    { label: "Sep 14", miles: 46, state: "current" },
     { label: "Sep 21", miles: 34, state: "taper" },
     { label: "Race", miles: 27, state: "race" }
   ],
