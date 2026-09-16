@@ -1,16 +1,17 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 13, 2026 · long-term priority reset",
+  updatedAt: "September 15, 2026 · easy run + speed work reviewed",
+  revision: "20260915-review",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Long run absorbed well · recover next",
+    label: "Easy running controlled · recovery strong",
     metrics: [
-      { label: "Long run", value: "13.18", unit: "miles", tone: "good" },
-      { label: "Average HR", value: "153", unit: "bpm", tone: "good" },
-      { label: "Average pace", value: "10:51", unit: "/mi", tone: "good" },
-      { label: "End stamina", value: "69", unit: "%", tone: "good" }
+      { label: "Readiness after run", value: "90", unit: "high · Sep 15", tone: "good" },
+      { label: "Overnight HRV", value: "125", unit: "ms · 7-day 86 balanced", tone: "good" },
+      { label: "Resting HR", value: "43", unit: "bpm · Sep 15", tone: "good" },
+      { label: "Sleep", value: "7:41", unit: "score 97", tone: "good" }
     ],
-    note: "The second half was approximately 4% faster while HR rose only about 2 bpm. Compared with September 4, this was longer, lower-HR, less costly, and showed materially better aerobic durability. The week closes at 44.37 running miles."
+    note: "Sep 15: 8.00 mi in 1:19:37, HR 149, recorded RPE 3/10, load 95. Athlete confirms 7.3 mi at 5.9 mph (10:10/mi), followed by 0.7 mi including strides at 5:00/mi. Easy laps stayed at HR 147–149; the 201 peak occurred during speed work. Monday: 1,000 m recovery swim, HR 115, load 36. Good recovery and controlled easy running support continuing the build. Belt calibration and incline limit precise historical pace comparisons."
   },
   currentWorkout: {
     date: "2026-09-14",
@@ -38,31 +39,32 @@ window.TRAINING_DATA = {
       { date: "2026-09-12", day: "Sat", miles: 6.61, type: "easy", title: "Easy + strength complete", detail: "11:20/mi · HR 144 · 50 min strength before · combined load 57", completed: true },
       { date: "2026-09-13", day: "Sun", miles: 13.18, type: "long", title: "Long run complete", detail: "10:51/mi · HR 153 · load 123 · minimal drift · end stamina 69", key: true, completed: true },
       {
-        date: "2026-09-14", day: "Mon", miles: 0, type: "rest", title: "Run-rest and absorb", detail: "Optional easy swim · optional controlled upper body", weekMarker: "Peak week",
+        date: "2026-09-14", day: "Mon", miles: 0, type: "rest", title: "Recovery swim complete", detail: "1,000 m · 32:54 total · HR 115 · load 36", weekMarker: "Current week", completed: true,
         workout: {
-          date: "2026-09-14", type: "rest", title: "Run-rest and absorb",
+          date: "2026-09-14", type: "rest", title: "Recovery swim complete",
           details: [
             { label: "Running", value: "Rest" },
-            { label: "Optional swim", value: "25–35 min genuinely easy · RPE 2" },
-            { label: "Strength", value: "Upper body only if fresh · cap at RPE 7" },
-            { label: "Lower body", value: "None after the 13.18-mile run" },
-            { label: "Recovery", value: "Carbohydrate + 30–40 g protein · hydrate" }
+            { label: "Swim", value: "1,000 m · 32:54 total · 23:38 moving" },
+            { label: "Average HR", value: "115 bpm" },
+            { label: "Training load", value: "36 · Garmin recovery label" },
+            { label: "Strength", value: "No session recorded in Garmin" }
           ],
           purpose: "Absorb the 44.37-mile week and arrive responsive for the final race-specific build."
         }
       },
       {
-        date: "2026-09-15", day: "Tue", miles: 8, type: "easy", title: "Easy + strides", detail: "Conversational · 6 × 20 sec relaxed strides",
+        date: "2026-09-15", day: "Tue", miles: 8, type: "easy", title: "Easy + speed complete", detail: "1:19:37 · HR 149 · RPE 3 · 4 fast segments · load 95", completed: true,
         workout: {
-          date: "2026-09-15", type: "easy", title: "8 easy + relaxed strides",
+          date: "2026-09-15", type: "easy", title: "8 miles + finishing speed work",
           details: [
-            { label: "Total", value: "8 miles" },
-            { label: "Effort", value: "RPE 2–3 · full conversation" },
-            { label: "Strides", value: "6 × 20 sec fast, smooth, not sprinting" },
-            { label: "Recovery", value: "60–90 sec walk/jog after each" },
-            { label: "Condition", value: "Skip strides if legs are dull or soreness exceeds 2/10" }
+            { label: "Recorded total", value: "8.00 mi · 1:19:37 timer · 9:57/mi overall" },
+            { label: "Effort", value: "Recorded RPE 3/10 · HR 149 average / 201 peak" },
+            { label: "Easy section", value: "7.3 mi @ 5.9 mph (10:10/mi); settled lap HR 147–149" },
+            { label: "Fast work", value: "Final 0.7 mi includes strides @ 5:00/mi (12 mph)" },
+            { label: "Trace", value: "4 fast segments ~28–36 sec; exact duration affected by belt/watch lag" },
+            { label: "Data caveat", value: "Belt settings athlete-confirmed; raw watch laps ~7.70 mi; incline unknown" }
           ],
-          purpose: "Restore rhythm after Monday recovery and prime mechanics without adding metabolic fatigue."
+          purpose: "Easy aerobic work was controlled after Sunday’s long run. Finishing efforts added speed exposure, with more intensity than the prescribed short relaxed strides. Keep future strides around 15–20 sec with full recovery."
         }
       },
       {
@@ -75,9 +77,11 @@ window.TRAINING_DATA = {
             { label: "Main work", value: "2 × 3 mi @ 7:15–7:20/mi" },
             { label: "Recovery", value: "4 min very easy jog" },
             { label: "Treadmill", value: "8.2 mph; 8.3 only late if controlled · 0.5% incline" },
-            { label: "Execution", value: "No HR cap; stable breathing, mechanics, and pace decide" }
+            { label: "Execution", value: "Controlled RPE ~6–7; slow down if breathing or mechanics deteriorate" },
+            { label: "Progression", value: "Six quality miles is an upper limit; stop after rep 1 if it becomes a grind" },
+            { label: "Strength", value: "One concise lower session later, if legs remain responsive; no failure" }
           ],
-          purpose: "Test goal-pace durability in long repetitions. Finish knowing you could run another mile—not emptied."
+          purpose: "Extend controlled aerobic work toward half-marathon effort. Today’s recovery supports keeping this session, subject to a normal warm-up tomorrow. Develop sustainable speed; the displayed pace is guidance, not a pass/fail test."
         }
       },
       {
@@ -89,6 +93,7 @@ window.TRAINING_DATA = {
             { label: "Effort", value: "RPE 2–3 · conversational" },
             { label: "Pace", value: "No target; slower is appropriate after Wednesday" },
             { label: "Strides", value: "None" },
+            { label: "Optional cross-training", value: "20–30 min easy swim if legs and energy are normal" },
             { label: "Adjustment", value: "Stop at 6–7 only for pain, altered gait, or systemic fatigue" }
           ],
           purpose: "Add low-cost aerobic volume while absorbing the HM-specific workout."
@@ -100,7 +105,7 @@ window.TRAINING_DATA = {
           date: "2026-09-18", type: "quality", title: "Soccer or complete rest",
           details: [
             { label: "If soccer", value: "Play, but do not add running mileage" },
-            { label: "If no soccer", value: "Rest; optional 25–40 min easy swim" },
+            { label: "If no soccer", value: "45–60 min easy bike or 25–40 min easy swim; rest if tired" },
             { label: "Strength", value: "Upper body only · no grinding" },
             { label: "Guardrail", value: "No lower-body lifting before the weekend" }
           ],
@@ -204,3 +209,8 @@ window.TRAINING_DATA = {
     { icon: "↗", title: "Build toward 65 mpw", text: "Establish 45–50, then hold and progress through 55 and 60 before 65. Pair it with 2–4 easy cross-training hours rather than forcing 75–80 running miles." }
   ]
 };
+
+// Use the timeline prescription as the single source for the next-session panel.
+window.TRAINING_DATA.currentWorkout = window.TRAINING_DATA.week.days.find(
+  (day) => day.date === "2026-09-16"
+).workout;

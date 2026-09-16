@@ -51,6 +51,7 @@
   }
 
   function renderRecovery() {
+    $("#recoveryTitle").textContent = data.recovery.label;
     $("#metricGrid").innerHTML = data.recovery.metrics
       .map(
         (metric) => `
@@ -66,7 +67,14 @@
 
   function renderWeek() {
     const stored = JSON.parse(localStorage.getItem("hm-dashboard-completed") || "{}");
-    const selectedDate = localStorage.getItem("hm-dashboard-selected") || data.currentWorkout.date;
+    // A new coaching update opens the next session, rather than an old saved card.
+    const revision = data.revision || data.updatedAt;
+    const sameRevision = localStorage.getItem("hm-dashboard-revision") === revision;
+    const savedDate = sameRevision && localStorage.getItem("hm-dashboard-selected");
+    const selectedDate = data.week.days.some((day) => day.date === savedDate)
+      ? savedDate : data.currentWorkout.date;
+    localStorage.setItem("hm-dashboard-revision", revision);
+    localStorage.setItem("hm-dashboard-selected", selectedDate);
     $("#weekRange").textContent = data.week.label || "CURRENT TRAINING WEEK";
     $("#weekMiles").textContent = data.week.targetMiles;
     $("#weekGrid").innerHTML = data.week.days
@@ -218,7 +226,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260913-long-term").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260915-review").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();
