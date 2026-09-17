@@ -1,6 +1,7 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 16, 2026 · effort and pauses clarified",
-  revision: "20260916-clarified",
+  updatedAt: "September 16, 2026 · provisional 1:38 target",
+  revision: "20260916-target",
+  raceGoal: { time: "1:38", pace: "7:29/mi", status: "Provisional; confirm with recovered effort" },
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
