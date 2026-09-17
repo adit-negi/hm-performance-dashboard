@@ -1,6 +1,6 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 16, 2026 · provisional 1:38 target",
-  revision: "20260916-target",
+  updatedAt: "September 16, 2026 · balanced development schedule",
+  revision: "20260916-balanced",
   raceGoal: { time: "1:38", pace: "7:29/mi", status: "Provisional; confirm with recovered effort" },
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
@@ -29,7 +29,7 @@ window.TRAINING_DATA = {
     purpose: "Consolidate a successful 44.37-mile week and preserve the quality of the final race-specific build. Fitness is gained during recovery from the work, not by adding Monday mileage."
   },
   week: {
-    label: "SEP 7 — SEP 20 · SWIPE TO EXPLORE",
+    label: "SEP 7 — SEP 27 · NEXT WEEK PROVISIONAL",
     targetMiles: 43,
     days: [
       { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true, weekMarker: "Last week" },
@@ -101,25 +101,27 @@ window.TRAINING_DATA = {
         }
       },
       {
-        date: "2026-09-18", day: "Fri", miles: 0, type: "quality", title: "Soccer or rest", detail: "Soccer counts as intensity · no additional run",
+        date: "2026-09-18", day: "Fri", miles: 0, type: "rest", title: "Lower + easy bike", detail: "Planned if recovered · soccer alternative excludes lifting/bike",
         workout: {
-          date: "2026-09-18", type: "quality", title: "Soccer or complete rest",
+          date: "2026-09-18", type: "rest", title: "Reduced lower + 45-minute easy bike",
           details: [
             { label: "If soccer", value: "Prefer skipping this week; play only if recovered, and no extra running/lower lifting" },
-            { label: "If no soccer", value: "45–60 min easy bike or 25–40 min easy swim; rest if tired" },
-            { label: "Strength", value: "Deferred lower maintenance only if recovered AND no soccer; low volume, no grinders" },
-            { label: "Guardrail", value: "Reassess legs/recovery Friday; residual soreness overrides the schedule" }
+            { label: "Bike", value: "45 min at conversational RPE 2; no hills/surges. Swim 30 min if bike unavailable." },
+            { label: "Lower", value: "Squat 2 × 3 RPE 6; split squat 1 × 5/side; soleus 2 × 12; calf 2 × 10" },
+            { label: "Placement", value: "Separate bike/lifting if convenient; use familiar loads and leave ≥3 reps in reserve" },
+            { label: "Recovery / soccer", value: "If still fatigued or playing soccer, omit lifting/bike; next lower slot is Tue Sep 22, not an indefinite deferral" }
           ],
-          purpose: "Respect soccer as the week's second hard-leg stimulus and protect Sunday durability."
+          purpose: "Restore a scheduled strength/aerobic exposure after recovery from Wednesday. Soccer consumes recovery capacity but is not equivalent to a targeted VO2 workout."
         }
       },
       {
-        date: "2026-09-19", day: "Sat", miles: 6, type: "easy", title: "Easy reset", detail: "Very easy after soccer · keep mechanics quiet",
+        date: "2026-09-19", day: "Sat", miles: 6, type: "easy", title: "Easy + relaxed swim", detail: "6 easy + 25 min swim · shorten if soccer fatigue",
         workout: {
           date: "2026-09-19", type: "easy", title: "6-mile easy reset",
           details: [
             { label: "Total", value: "6 miles" },
             { label: "Effort", value: "RPE 2–3" },
+            { label: "Swim", value: "25 min relaxed RPE 2, separated if convenient; omit for residual fatigue" },
             { label: "After soccer", value: "Keep it recovery-easy; no strides" },
             { label: "If sore", value: "4 miles or rest; do not compensate Sunday" }
           ],
@@ -138,6 +140,94 @@ window.TRAINING_DATA = {
             { label: "Route", value: "Sheltered and controlled if possible" }
           ],
           purpose: "Continue easy durability work only if the hard session and subsequent days are absorbed. Reassess before Sunday; do not chase a weekly total."
+        }
+      },
+      {
+        date: "2026-09-21", day: "Mon", miles: 0, type: "rest", title: "Swim + Upper A", detail: "30 min easy swim · controlled upper · no running", weekMarker: "Next week · provisional",
+        workout: {
+          date: "2026-09-21", type: "rest", title: "30-minute swim + Upper A",
+          details: [
+            { label: "Swim", value: "30 min relaxed RPE 2; no hard sets" },
+            { label: "Upper", value: "Upper A below; 30–40 min, RPE ≤7, no failure" },
+            { label: "Running", value: "Rest" },
+            { label: "Week budget", value: "45 mi without soccer; 39 mi with Friday soccer. 100 min easy cross-training + one lower session." },
+            { label: "Status", value: "Provisional pending weekend recovery and soccer plans; hold volume while adding structure" }
+          ],
+          purpose: "Keep low-impact aerobic work and strength in the plan while allowing recovery from the long run. San Jose is a checkpoint, not the sole purpose of this program."
+        }
+      },
+      {
+        date: "2026-09-22", day: "Tue", miles: 8, type: "quality", title: "Controlled threshold + lower", detail: "3 × 8 min / 2 min jog · lower later · 8 mi total", key: true,
+        workout: {
+          date: "2026-09-22", type: "quality", title: "3 × 8 minutes controlled + lower",
+          details: [
+            { label: "Total", value: "About 8 mi including warm-up, recoveries and easy cooldown" },
+            { label: "Warm-up", value: "2 mi easy + familiar drills + 4 × 15 sec relaxed pickups with full easy recovery" },
+            { label: "Work", value: "3 × 8 min, 2 min easy jog; RPE 6–7, short phrases, finish with another rep available" },
+            { label: "Pacing", value: "Start clearly easier than Sep 16; no fixed target or HR cap. Slow if effort rises beyond controlled." },
+            { label: "Lower later", value: "30–35 min, ideally ≥6 hours later: use the Tuesday lower prescription below" },
+            { label: "Decision", value: "Proceed after normal easy days and responsive warm-up. If rep 1 is already hard, switch to easy and reassess." }
+          ],
+          purpose: "Accumulate repeatable threshold-oriented work rather than test HM fitness. Restore a regular strength stimulus. If quality unexpectedly becomes RPE 8–9, reassess lifting and Friday intensity rather than stacking fatigue."
+        }
+      },
+      {
+        date: "2026-09-23", day: "Wed", miles: 8, type: "easy", title: "Easy + aerobic bike", detail: "8 easy + 45 min easy bike · separate sessions",
+        workout: {
+          date: "2026-09-23", type: "easy", title: "8 easy miles + 45-minute bike",
+          details: [
+            { label: "Run", value: "8 mi conversational RPE 2–3; no strides" },
+            { label: "Bike", value: "45 min RPE 2–3, light gearing; roughly 100–120 W only if genuinely easy" },
+            { label: "Environment", value: "Cooler daylight or indoor fan; do not force hot afternoon riding or unlit routes" },
+            { label: "Adjustment", value: "Separate by several hours. Shorten for persistent leg heaviness; do not chase watts." }
+          ],
+          purpose: "Add low-impact aerobic time without turning an easy day into another quality session. Check the response to Tuesday lifting."
+        }
+      },
+      {
+        date: "2026-09-24", day: "Thu", miles: 7, type: "easy", title: "Easy + swim", detail: "7 easy + 25 min relaxed swim",
+        workout: {
+          date: "2026-09-24", type: "easy", title: "7 easy miles + 25-minute swim",
+          details: [
+            { label: "Run", value: "7 mi RPE 2–3, no fast finish" },
+            { label: "Swim", value: "25 min relaxed RPE 2; no intervals or hard kick sets" },
+            { label: "Upper B", value: "Optional 25–30 min only if fresh; less important than completing weekly lower work" }
+          ],
+          purpose: "Maintain easy aerobic frequency and reach 100 scheduled cross-training minutes this week without borrowing from Friday quality."
+        }
+      },
+      {
+        date: "2026-09-25", day: "Fri", miles: 6, type: "quality", title: "Aerobic power OR soccer", detail: "4 × 3 min / 3 min easy only if recovered and no soccer", key: true,
+        workout: {
+          date: "2026-09-25", type: "quality", title: "Second quality slot: 4 × 3 minutes",
+          details: [
+            { label: "Total", value: "About 6 mi with ≥2 mi warm-up and easy cooldown" },
+            { label: "Work", value: "4 × 3 min at repeatable RPE 8, 3 min easy jog; no sprints, no final-rep time trial" },
+            { label: "Gate", value: "Only if Tuesday stayed controlled and Thursday legs/easy effort are normal" },
+            { label: "If soccer", value: "Soccer replaces this session; no run. Week becomes 39 mi, without make-up miles." },
+            { label: "If fatigue", value: "No intervals: 4–6 easy or rest according to symptoms; reassess the combined workload" }
+          ],
+          purpose: "Introduce a small faster-running dose targeting aerobic power and mechanics. Soccer uses the same recovery slot, but does not replicate this adaptation. No fast-finish long run as a third quality session."
+        }
+      },
+      {
+        date: "2026-09-26", day: "Sat", miles: 5, type: "easy", title: "5 recovery miles", detail: "RPE 2 · no extra lifting or strides",
+        workout: {
+          date: "2026-09-26", type: "easy", title: "5 recovery miles",
+          details: [{ label: "Run", value: "5 mi very easy; shorten/rest if soccer left soreness or altered mechanics" }],
+          purpose: "Absorb Friday's work and preserve a comfortable Sunday long run."
+        }
+      },
+      {
+        date: "2026-09-27", day: "Sun", miles: 11, type: "long", title: "11 easy long run", detail: "No fast finish · race-week reduction follows", key: true,
+        workout: {
+          date: "2026-09-27", type: "long", title: "11 easy miles",
+          details: [
+            { label: "Run", value: "11 mi conversational RPE 2–3; no pace test" },
+            { label: "Fuel", value: "Eat beforehand; 30–45 g carbohydrate/hour plus fluids" },
+            { label: "Next phase", value: "Reduce race-week volume; resume development after recovery from the Oct 4 benchmark" }
+          ],
+          purpose: "Keep aerobic consistency with a shorter long run while balancing the added quality and strength. Do not increase weekly mileage and supplementary workload simultaneously."
         }
       }
     ]
@@ -159,24 +249,24 @@ window.TRAINING_DATA = {
       },
       {
         id: "lower",
-        day: "Friday · conditional",
-        title: "Lower maintenance",
-        timing: "Deferred after Wednesday RPE 9. Only if recovered and skipping soccer; otherwise reschedule after the weekend recovery check.",
+        day: "Tuesday Sep 22 · weekly anchor",
+        title: "Lower-body development",
+        timing: "30–35 min after controlled quality, preferably ≥6 hours later. Sep 18 uses the reduced dose in its calendar card. Do not indefinitely defer this session for ordinary training tiredness.",
         tone: "lower",
         exercises: [
-          { name: "Power clean", dose: "Omit this exposure", note: "Reduce the dose after Wednesday’s hard run" },
-          { name: "Back squat", dose: "2 × 3 · RPE 6", note: "Only if recovered; familiar weight, several reps in reserve" },
-          { name: "Bulgarian split squat", dose: "1 × 5 / side", note: "Light familiar load; omit if residual soreness" },
+          { name: "Back squat", dose: "2–3 × 3 · RPE 6–7", note: "Start with 2 sets if no recent lower training; familiar load, ≥3 reps in reserve" },
+          { name: "Bulgarian split squat", dose: "1–2 × 5 / side", note: "Start with 1 set if returning; no new loading or deep eccentric emphasis" },
+          { name: "Hamstring curl", dose: "2 × 8 · RPE 6", note: "Only a familiar variation; do not introduce sore-inducing new work before the race" },
           { name: "Bent-knee soleus raise", dose: "2 × 10–15", note: "Controlled familiar load; no failure" },
           { name: "Standing calf raise", dose: "2 × 8–12", note: "Straight knee; no failure" }
         ],
-        alternative: "Do not replace the omitted cleans with extra deadlifts. This is a temporary reduced dose; retain regular lower-body training as recovery allows."
+        alternative: "This is a modified strength program, not full Candito. After San Jose recovery, progress familiar squat/hinge loads and consider a second short lower exposure. Cleans are not automatically easier to recover from and are not a substitute for all posterior-chain work."
       },
       {
         id: "upper-b",
-        day: "Friday",
+        day: "Thursday · optional",
         title: "Upper B",
-        timing: "Run-rest day · skip if soccer creates excess load",
+        timing: "25–30 min if fresh; the second upper session does not displace lower-body training",
         tone: "upper",
         exercises: [
           { name: "Bench press", dose: "Candito secondary sets", note: "Cap at RPE 7–8; no AMRAP or failure" },
@@ -187,10 +277,10 @@ window.TRAINING_DATA = {
       }
     ],
     guardrails: [
-      "No second lower-body day",
+      "One scheduled lower session now; consider a second short exposure after race recovery",
       "No lower-body AMRAPs or grinders",
       "Stop cleans when speed or technique fades",
-      "Reduce lower lifting again in the final 10 days"
+      "Reduce lower volume in race week; no new lifts or soreness-inducing work"
     ]
   },
   volume: [
@@ -198,15 +288,15 @@ window.TRAINING_DATA = {
     { label: "Aug 31", miles: 38.6, state: "complete" },
     { label: "Sep 7", miles: 44.4, state: "complete" },
     { label: "Sep 14", miles: 43.1, state: "current" },
-    { label: "Sep 21", miles: 34, state: "taper" },
+    { label: "Sep 21", miles: 45, state: "planned" },
     { label: "Race", miles: 27, state: "race" }
   ],
   rules: [
     { icon: "↘", title: "Easy means easy", text: "Use conversational effort. Pace can float with heat and fatigue." },
     { icon: "◇", title: "Fuel the work", text: "Do not create the calorie deficit around threshold or long-run sessions." },
-    { icon: "⚑", title: "Soccer is intensity", text: "If soccer happens Friday, reduce Saturday and keep Sunday fully easy." },
-    { icon: "⌁", title: "Strength supports running", text: "Keep one lower session weekly, placed Monday at low dose or after quality. No grinders; leave 2–3 reps in reserve." },
-    { icon: "+", title: "Build the aerobic ceiling", text: "Use 90–150 easy cross-training minutes weekly. Bike and swim supplement running; they do not replace run-specific durability." },
+    { icon: "⚑", title: "Two quality slots, not three", text: "Tuesday controlled threshold; Friday modest aerobic-power work if no soccer and recovered. Soccer uses Friday's recovery budget but is not a VO2 substitute. Keep the long run easy." },
+    { icon: "⌁", title: "Protect weekly lower training", text: "Tuesday lower is scheduled, not a leftover. Scale its dose to recent lifting history. If genuinely unready, document why and set the replacement date." },
+    { icon: "+", title: "Schedule aerobic support", text: "Next week: Mon 30-min swim, Wed 45-min bike, Thu 25-min swim = 100 min at RPE 2–3. Progress duration only after this combined week is absorbed." },
     { icon: "↗", title: "Build toward 65 mpw", text: "Establish 45–50, then hold and progress through 55 and 60 before 65. Pair it with 2–4 easy cross-training hours rather than forcing 75–80 running miles." }
   ]
 };

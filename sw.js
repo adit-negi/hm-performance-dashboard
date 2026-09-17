@@ -1,4 +1,4 @@
-const CACHE = "hm-dashboard-v11";
+const CACHE = "hm-dashboard-v12";
 const ASSETS = ["./", "./index.html", "./styles.css", "./app.js", "./data.js", "./manifest.json", "./icon.svg"];
 
 self.addEventListener("install", (event) => {
