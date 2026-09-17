@@ -226,7 +226,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260915-review").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260916-review").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();
