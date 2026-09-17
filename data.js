@@ -1,6 +1,6 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 16, 2026 · hard session reviewed",
-  revision: "20260916-review",
+  updatedAt: "September 16, 2026 · effort and pauses clarified",
+  revision: "20260916-clarified",
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
@@ -11,7 +11,7 @@ window.TRAINING_DATA = {
       { label: "Morning HRV", value: "111", unit: "ms · 7-day 90 balanced", tone: "good" },
       { label: "Sleep", value: "8:14", unit: "score 84 · RHR 45", tone: "good" }
     ],
-    note: "Sep 16: 10.05 mi total, 3 + 2.5 mi work reported; work laps approximately 7:22/mi in both blocks. Effort was hard and uncontrolled; second-block lap HR 194 → 202 → 203. Garmin load 300. Morning recovery was good, but readiness cannot guarantee workout tolerance. The progression from 32 minutes of short repetitions to ~44 minutes in long repetitions was too large for controlled execution. Station weather: 68°F and 17 mph wind; personal exposure unknown. Paused time limits continuous-effort comparisons."
+    note: "Sep 16: 10.05 mi total, 3 + 2.5 mi work reported; work laps approximately 7:22/mi in both blocks. Athlete ran out of gas; legs felt okay, no pain. Pauses were red lights and a longer water break, not reported fatigue stops. Second-block lap HR 194 → 202 → 203, recorded RPE 9. The prescribed duration progression was too large for controlled execution. Station wind was 17 mph; personal exposure unknown. Fueling contribution remains unconfirmed."
   },
   currentWorkout: {
     date: "2026-09-14",
@@ -77,7 +77,8 @@ window.TRAINING_DATA = {
             { label: "Second block", value: "Mile 1 7:19 / HR 194; mile 2 7:23 / HR 202; last ~0.5 HR 203" },
             { label: "Effort", value: "Recorded RPE 9/10; athlete reports hard, not controlled" },
             { label: "Conditions", value: "Station 68°F / 17 mph wind; route exposure unknown" },
-            { label: "Recovery / pauses", value: "~5:17 easy lap plus paused time; confirm stop reasons" },
+            { label: "Recovery / pauses", value: "~5:17 easy lap; pauses were red lights and a longer water break" },
+            { label: "Athlete feedback", value: "Ran out of gas; legs okay, no pain. Fuel intake not yet known." },
             { label: "Strength tonight", value: "Defer lower body; recover from the run" }
           ],
           purpose: "The intended controlled endurance work became too hard. Cutting the second rep was appropriate. Next quality session should return to 24–30 minutes of controlled work and progress one variable at a time; do not repeat this as a redemption test."
