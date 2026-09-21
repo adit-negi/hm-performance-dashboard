@@ -1,36 +1,22 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 16, 2026 · balanced development schedule",
-  revision: "20260916-balanced",
+  updatedAt: "September 20, 2026 · 50.37-mile week reviewed",
+  revision: "20260920-review",
   raceGoal: { time: "1:38", pace: "7:29/mi", status: "Provisional; confirm with recovered effort" },
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Quality completed hard · recovery next",
+    label: "Durability progressing · absorb the load",
     metrics: [
-      { label: "Recorded effort", value: "9/10", unit: "harder than intended", tone: "warn" },
-      { label: "Readiness after run", value: "38", unit: "morning 100", tone: "warn" },
-      { label: "Morning HRV", value: "111", unit: "ms · 7-day 90 balanced", tone: "good" },
-      { label: "Sleep", value: "8:14", unit: "score 84 · RHR 45", tone: "good" }
+      { label: "Running this week", value: "50.37", unit: "mi · 44.37 last week", tone: "good" },
+      { label: "Readiness after long run", value: "27", unit: "morning 55 · vendor estimate", tone: "warn" },
+      { label: "Overnight HRV", value: "75", unit: "ms · 7-day 96 balanced", tone: "warn" },
+      { label: "Sleep", value: "6:51", unit: "score 73 · RHR 51", tone: "warn" }
     ],
-    note: "Sep 16: 10.05 mi total, 3 + 2.5 mi work reported; work laps approximately 7:22/mi in both blocks. Athlete ran out of gas; legs felt okay, no pain. Pauses were red lights and a longer water break, not reported fatigue stops. Second-block lap HR 194 → 202 → 203, recorded RPE 9. The prescribed duration progression was too large for controlled execution. Station wind was 17 mph; personal exposure unknown. Fueling contribution remains unconfirmed."
-  },
-  currentWorkout: {
-    date: "2026-09-14",
-    type: "rest",
-    title: "Run-rest and absorb",
-    details: [
-      { label: "Running", value: "Rest" },
-      { label: "Optional swim", value: "25–35 min genuinely easy · RPE 2" },
-      { label: "Strength", value: "Upper body only if fresh · cap at RPE 7" },
-      { label: "Lower body", value: "None after the 13.18-mile run" },
-      { label: "Recovery", value: "Carbohydrate + 30–40 g protein · hydrate" },
-      { label: "Decision", value: "Tuesday depends on morning legs and recovery" }
-    ],
-    purpose: "Consolidate a successful 44.37-mile week and preserve the quality of the final race-specific build. Fitness is gained during recovery from the work, not by adding Monday mileage."
+    note: "Week: 50.37 running miles versus ~43 planned, plus 52.5 min swimming, 46.9 min strength and 124.9 min soccer (~12:16 recorded total). Sep 20: 15.02 mi at 10:29/mi, HR 151, recorded RPE 4. First/last five miles ~10:30/10:29 at HR 152/153, stable cadence; ~9:56 paused, so not a continuous fitness test. Overnight HRV 125 → 111 → 95 → 82 → 79 → 75 since Tuesday; RHR rose from 43–45 to 49–52. These contextual recovery signals warrant consolidation, not a diagnosis. Strength exercise content, fueling, current soreness and weekend confounders await athlete feedback."
   },
   week: {
-    label: "SEP 7 — SEP 27 · NEXT WEEK PROVISIONAL",
-    targetMiles: 43,
+    label: "SEP 7 — SEP 27 · SEP 14–20 REVIEWED",
+    targetMiles: 50.37,
     days: [
       { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true, weekMarker: "Last week" },
       { date: "2026-09-08", day: "Tue", miles: 7.55, type: "easy", title: "Easy + strides complete", detail: "10:35/mi · HR 151 · 4 fast segments · strength before", completed: true },
@@ -86,74 +72,75 @@ window.TRAINING_DATA = {
         }
       },
       {
-        date: "2026-09-17", day: "Thu", miles: 6, type: "easy", title: "5–6 easy or rest", detail: "Recovery check first · no strides · no compensatory miles",
+        date: "2026-09-17", day: "Thu", miles: 6.25, type: "easy", title: "Strength + treadmill complete", detail: "46.9 min lifting + 6.25 mi · HR 163 · recorded RPE 2", completed: true,
         workout: {
-          date: "2026-09-17", type: "easy", title: "5–6 recovery miles if comfortable",
+          date: "2026-09-17", type: "easy", title: "Strength + 6.25 treadmill miles",
           details: [
-            { label: "Total", value: "5–6 miles if legs feel normal; rest if markedly fatigued" },
-            { label: "Effort", value: "RPE 2 · full conversation" },
-            { label: "Pace", value: "No target; keep the opening 10–15 minutes very gentle" },
-            { label: "Strides", value: "None" },
-            { label: "Alternative", value: "20–30 min easy swim instead of running if impact feels unwelcome" },
-            { label: "Adjustment", value: "Stop for pain or altered gait; no additional lower-body lifting" }
+            { label: "Strength", value: "46:51 before running; exercise content not available in reviewed data" },
+            { label: "Run", value: "6.25 mi · 1:05:11 · saved pace 10:25/mi; belt setting unconfirmed" },
+            { label: "Effort", value: "Recorded RPE 2; HR 163 avg / 190 max" },
+            { label: "HR pattern", value: "Mile averages 175, 165, 162, 161, 157, 158: high early, settling later" },
+            { label: "Load", value: "Run ~127 + strength ~31; cardiovascular load does not capture all lifting stress" }
           ],
-          purpose: "Allow recovery after the RPE-9 session so the next training days remain useful. Do not make up the omitted rep or mileage."
+          purpose: "Reported effort was easy, but cardiovascular cost was higher than Saturday. Do not call this progressive HR drift or a second hard workout from Garmin labels alone; preceding lifting, environment and sensor behavior need context."
         }
       },
       {
-        date: "2026-09-18", day: "Fri", miles: 0, type: "rest", title: "Lower + easy bike", detail: "Planned if recovered · soccer alternative excludes lifting/bike",
+        date: "2026-09-18", day: "Fri", miles: 4.02, type: "quality", title: "Run + soccer complete", detail: "4.02 mi HR 159 + 2:04:53 soccer · extra running versus plan", completed: true,
         workout: {
-          date: "2026-09-18", type: "rest", title: "Reduced lower + 45-minute easy bike",
+          date: "2026-09-18", type: "quality", title: "4.02 miles + soccer",
           details: [
-            { label: "If soccer", value: "Prefer skipping this week; play only if recovered, and no extra running/lower lifting" },
-            { label: "Bike", value: "45 min at conversational RPE 2; no hills/surges. Swim 30 min if bike unavailable." },
-            { label: "Lower", value: "Squat 2 × 3 RPE 6; split squat 1 × 5/side; soleus 2 × 12; calf 2 × 10" },
-            { label: "Placement", value: "Separate bike/lifting if convenient; use familiar loads and leave ≥3 reps in reserve" },
-            { label: "Recovery / soccer", value: "If still fatigued or playing soccer, omit lifting/bike; next lower slot is Tue Sep 22, not an indefinite deferral" }
+            { label: "Run", value: "4.02 mi · 42:00 · 10:26/mi · HR 159 avg / 173 max" },
+            { label: "Soccer", value: "2:04:53 timer; 2:13:34 elapsed; ~5.70 mi movement excluded from running mileage" },
+            { label: "Soccer HR", value: "103 avg / 157 max; low average does not quantify accelerations or tissue load" },
+            { label: "Planned vs done", value: "Soccer branch prescribed no run; the additional 4.02 mi increased total load" },
+            { label: "Other work", value: "No cycling or additional strength recorded Friday" }
           ],
-          purpose: "Restore a scheduled strength/aerobic exposure after recovery from Wednesday. Soccer consumes recovery capacity but is not equivalent to a targeted VO2 workout."
+          purpose: "Count both sessions when assessing the week. Soccer is not a dedicated VO2 session and not a zero-cost rest day."
         }
       },
       {
-        date: "2026-09-19", day: "Sat", miles: 6, type: "easy", title: "Easy + relaxed swim", detail: "6 easy + 25 min swim · shorten if soccer fatigue",
+        date: "2026-09-19", day: "Sat", miles: 7.03, type: "easy", title: "Easy + swim complete", detail: "7.03 mi · HR 144 / max 152 + 725 m swim", completed: true,
         workout: {
-          date: "2026-09-19", type: "easy", title: "6-mile easy reset",
+          date: "2026-09-19", type: "easy", title: "7.03 easy miles + 725 m swim",
           details: [
-            { label: "Total", value: "6 miles" },
-            { label: "Effort", value: "RPE 2–3" },
-            { label: "Swim", value: "25 min relaxed RPE 2, separated if convenient; omit for residual fatigue" },
-            { label: "After soccer", value: "Keep it recovery-easy; no strides" },
-            { label: "If sore", value: "4 miles or rest; do not compensate Sunday" }
+            { label: "Run", value: "Saved 7.03 mi · 1:19:04 · HR 144 avg / 152 max" },
+            { label: "Pace caveat", value: "Saved pace 11:15/mi; raw splits total ~7.48 mi. Use confirmed belt settings for pace comparisons." },
+            { label: "Swim", value: "725 m in 19:38 timer; HR 144 avg / 168 max" },
+            { label: "Combined load", value: "Run ~44 + swim ~38" }
           ],
-          purpose: "Maintain frequency without carrying soccer fatigue into the long run."
+          purpose: "Run HR stayed in a narrow easy range after soccer. Swim was a real additional exposure, not physiologically free because Garmin called it recovery."
         }
       },
       {
-        date: "2026-09-20", day: "Sun", miles: 13, type: "long", title: "Easy long run", detail: "Fully conversational · no fast finish · fuel normally", key: true,
+        date: "2026-09-20", day: "Sun", miles: 15.02, type: "long", title: "15.02-mile long run complete", detail: "10:29/mi · HR 151 · RPE 4 · ~9:56 paused", key: true, completed: true,
         workout: {
-          date: "2026-09-20", type: "long", title: "13-mile easy long run",
+          date: "2026-09-20", type: "long", title: "15.02-mile long run complete",
           details: [
-            { label: "Total", value: "13 miles" },
-            { label: "Effort", value: "RPE 2–3 · full conversation" },
-            { label: "Pace", value: "No target and no fast finish" },
-            { label: "Fuel", value: "30–45 g carbohydrate/hour + fluids" },
-            { label: "Route", value: "Sheltered and controlled if possible" }
+            { label: "Total", value: "15.02 mi · 2:37:28 timer / 2:47:24 elapsed; prescribed 13 mi" },
+            { label: "Effort", value: "Recorded RPE 4/10 · HR 151 avg / 173 max" },
+            { label: "Miles 1–5", value: "10:30/mi · HR 152 · cadence ~165.5" },
+            { label: "Miles 6–10", value: "10:29/mi · HR 149 · cadence ~163.8" },
+            { label: "Miles 11–15", value: "10:29/mi · HR 153 · cadence ~165.8" },
+            { label: "Comparison", value: "Sep 13: 13.18 mi at 10:54 timer pace / HR 153, ~12:52 paused; conditions differ" },
+            { label: "Data limits", value: "Elevation/power corrupted: do not use claimed 869 m ascent or GAP. Pause reasons and fueling unconfirmed." }
           ],
-          purpose: "Continue easy durability work only if the hard session and subsequent days are absorbed. Reassess before Sunday; do not chase a weekly total."
+          purpose: "Encouraging durability execution: maintained pace and mechanics over a longer run without substantial HR escalation. This is not proof of a specific race time or an instruction to extend next Sunday's run again."
         }
       },
       {
-        date: "2026-09-21", day: "Mon", miles: 0, type: "rest", title: "Swim + Upper A", detail: "30 min easy swim · controlled upper · no running", weekMarker: "Next week · provisional",
+        date: "2026-09-21", day: "Mon", miles: 0, type: "rest", title: "Recovery swim + upper", detail: "20–30 min gentle swim · upper if fresh · run-rest", weekMarker: "Next week · recovery-gated",
         workout: {
-          date: "2026-09-21", type: "rest", title: "30-minute swim + Upper A",
+          date: "2026-09-21", type: "rest", title: "Absorb 50 miles · gentle swim + upper",
           details: [
-            { label: "Swim", value: "30 min relaxed RPE 2; no hard sets" },
-            { label: "Upper", value: "Upper A below; 30–40 min, RPE ≤7, no failure" },
+            { label: "Swim", value: "20–30 min relaxed RPE 1–2; rest instead if exhausted or unwell" },
+            { label: "Upper", value: "20–30 min only if fresh; RPE ≤6–7, no failure" },
             { label: "Running", value: "Rest" },
-            { label: "Week budget", value: "45 mi without soccer; 39 mi with Friday soccer. 100 min easy cross-training + one lower session." },
-            { label: "Status", value: "Provisional pending weekend recovery and soccer plans; hold volume while adding structure" }
+            { label: "Week budget", value: "Up to 45 mi without soccer / 39 with it; 90–100 min cross-training and one lower slot. Do not chase 55." },
+            { label: "Recovery", value: "Eat full recovery meals, hydrate and prioritize sleep; no compensatory calorie restriction" },
+            { label: "Tuesday gate", value: "Normal gait/legs, no illness, easy warm-up feels normal, and recovery trend not continuing to deteriorate" }
           ],
-          purpose: "Keep low-impact aerobic work and strength in the plan while allowing recovery from the long run. San Jose is a checkpoint, not the sole purpose of this program."
+          purpose: "Consolidate a 50.37-mile week plus soccer/strength. Preserve the balanced development schedule without automatically raising workload after the longest run of this block."
         }
       },
       {
@@ -165,8 +152,9 @@ window.TRAINING_DATA = {
             { label: "Warm-up", value: "2 mi easy + familiar drills + 4 × 15 sec relaxed pickups with full easy recovery" },
             { label: "Work", value: "3 × 8 min, 2 min easy jog; RPE 6–7, short phrases, finish with another rep available" },
             { label: "Pacing", value: "Start clearly easier than Sep 16; no fixed target or HR cap. Slow if effort rises beyond controlled." },
-            { label: "Lower later", value: "30–35 min, ideally ≥6 hours later: use the Tuesday lower prescription below" },
-            { label: "Decision", value: "Proceed after normal easy days and responsive warm-up. If rep 1 is already hard, switch to easy and reassess." }
+            { label: "Lower later", value: "Use the low end of Tuesday lower prescription, ideally ≥6 hours later; no progression in load this week" },
+            { label: "Decision", value: "Only with normal legs/warm-up and stabilizing recovery. If not ready, 6 easy instead; no quality make-up Wednesday." },
+            { label: "Fallback strength", value: "A short familiar dose may remain if only quality is deferred and legs are normal. Pain/illness/persistent fatigue: reassess; reserve Sat Sep 26 after easy running only if recovered and no Friday hard work." }
           ],
           purpose: "Accumulate repeatable threshold-oriented work rather than test HM fitness. Restore a regular strength stimulus. If quality unexpectedly becomes RPE 8–9, reassess lifting and Friday intensity rather than stacking fatigue."
         }
@@ -193,7 +181,7 @@ window.TRAINING_DATA = {
             { label: "Swim", value: "25 min relaxed RPE 2; no intervals or hard kick sets" },
             { label: "Upper B", value: "Optional 25–30 min only if fresh; less important than completing weekly lower work" }
           ],
-          purpose: "Maintain easy aerobic frequency and reach 100 scheduled cross-training minutes this week without borrowing from Friday quality."
+          purpose: "Maintain easy aerobic frequency and reach 90–100 scheduled cross-training minutes this week without borrowing from Friday quality."
         }
       },
       {
@@ -203,7 +191,8 @@ window.TRAINING_DATA = {
           details: [
             { label: "Total", value: "About 6 mi with ≥2 mi warm-up and easy cooldown" },
             { label: "Work", value: "4 × 3 min at repeatable RPE 8, 3 min easy jog; no sprints, no final-rep time trial" },
-            { label: "Gate", value: "Only if Tuesday stayed controlled and Thursday legs/easy effort are normal" },
+            { label: "Gate", value: "Only if Tuesday stayed controlled and Thursday legs/easy effort are normal; no soccer that day" },
+            { label: "If Tuesday deferred", value: "If recovered and no soccer, use 3 × 8 min controlled / 2 min jog instead, ~7 mi total; skip VO2 this week" },
             { label: "If soccer", value: "Soccer replaces this session; no run. Week becomes 39 mi, without make-up miles." },
             { label: "If fatigue", value: "No intervals: 4–6 easy or rest according to symptoms; reassess the combined workload" }
           ],
@@ -211,10 +200,13 @@ window.TRAINING_DATA = {
         }
       },
       {
-        date: "2026-09-26", day: "Sat", miles: 5, type: "easy", title: "5 recovery miles", detail: "RPE 2 · no extra lifting or strides",
+        date: "2026-09-26", day: "Sat", miles: 5, type: "easy", title: "5 recovery miles", detail: "RPE 2 · lower fallback only if Tuesday deferred and Friday easy",
         workout: {
           date: "2026-09-26", type: "easy", title: "5 recovery miles",
-          details: [{ label: "Run", value: "5 mi very easy; shorten/rest if soccer left soreness or altered mechanics" }],
+          details: [
+            { label: "Run", value: "5 mi very easy; shorten/rest if soccer left soreness or altered mechanics" },
+            { label: "Lower fallback", value: "Only if Tuesday lower was deferred, now recovered and Friday had no hard work: reduced familiar dose. Otherwise no extra lifting." }
+          ],
           purpose: "Absorb Friday's work and preserve a comfortable Sunday long run."
         }
       },
@@ -251,7 +243,7 @@ window.TRAINING_DATA = {
         id: "lower",
         day: "Tuesday Sep 22 · weekly anchor",
         title: "Lower-body development",
-        timing: "30–35 min after controlled quality, preferably ≥6 hours later. Sep 18 uses the reduced dose in its calendar card. Do not indefinitely defer this session for ordinary training tiredness.",
+        timing: "Tue Sep 22, after running and preferably ≥6 hours later. Use low-end set counts after the 50-mile week; familiar loads only. If genuinely unrecovered, reassess for Sat Sep 26 provided Friday had no hard work, rather than leaving an undated deferral.",
         tone: "lower",
         exercises: [
           { name: "Back squat", dose: "2–3 × 3 · RPE 6–7", note: "Start with 2 sets if no recent lower training; familiar load, ≥3 reps in reserve" },
@@ -287,7 +279,7 @@ window.TRAINING_DATA = {
     { label: "Aug 24", miles: 39.5, state: "complete" },
     { label: "Aug 31", miles: 38.6, state: "complete" },
     { label: "Sep 7", miles: 44.4, state: "complete" },
-    { label: "Sep 14", miles: 43.1, state: "current" },
+    { label: "Sep 14", miles: 50.4, state: "complete" },
     { label: "Sep 21", miles: 45, state: "planned" },
     { label: "Race", miles: 27, state: "race" }
   ],
@@ -296,12 +288,12 @@ window.TRAINING_DATA = {
     { icon: "◇", title: "Fuel the work", text: "Do not create the calorie deficit around threshold or long-run sessions." },
     { icon: "⚑", title: "Two quality slots, not three", text: "Tuesday controlled threshold; Friday modest aerobic-power work if no soccer and recovered. Soccer uses Friday's recovery budget but is not a VO2 substitute. Keep the long run easy." },
     { icon: "⌁", title: "Protect weekly lower training", text: "Tuesday lower is scheduled, not a leftover. Scale its dose to recent lifting history. If genuinely unready, document why and set the replacement date." },
-    { icon: "+", title: "Schedule aerobic support", text: "Next week: Mon 30-min swim, Wed 45-min bike, Thu 25-min swim = 100 min at RPE 2–3. Progress duration only after this combined week is absorbed." },
+    { icon: "+", title: "Schedule aerobic support", text: "Next week: Mon 20–30-min swim, Wed 45-min bike, Thu 25-min swim = 90–100 min. Keep it easy; do not increase running and supplemental volume together." },
     { icon: "↗", title: "Build toward 65 mpw", text: "Establish 45–50, then hold and progress through 55 and 60 before 65. Pair it with 2–4 easy cross-training hours rather than forcing 75–80 running miles." }
   ]
 };
 
 // Use the timeline prescription as the single source for the next-session panel.
 window.TRAINING_DATA.currentWorkout = window.TRAINING_DATA.week.days.find(
-  (day) => day.date === "2026-09-17"
+  (day) => day.date === "2026-09-21"
 ).workout;
