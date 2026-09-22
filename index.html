@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260913-timeline" />
+    <link rel="stylesheet" href="styles.css?v=20260921-strength" />
   </head>
   <body>
     <div class="page-shell">
@@ -98,14 +98,30 @@
         <section class="section-block strength-section" id="strength">
           <div class="section-heading strength-heading">
             <div>
-              <p class="eyebrow">MODIFIED CANDITO</p>
+              <p class="eyebrow">CANDITO-INSPIRED · RESEARCH-INFORMED</p>
               <h2>Strength for running and beyond</h2>
             </div>
-            <div class="strength-status"><strong>2 + 1</strong><span>lower + upper · extra upper optional</span></div>
+            <div class="strength-status"><strong>2</strong><span>full-body days after race recovery</span></div>
           </div>
-          <p class="section-intro">Keep the main strength signal. Remove grinding and redundant hypertrophy, retain one lower-body exposure, and place it where it preserves key running and the weekend long run.</p>
+          <p class="section-intro" id="strengthIntro"></p>
+          <div id="strengthPhases" class="strength-phases" role="group" aria-label="Choose strength training phase"></div>
+          <div class="strength-phase-summary" aria-live="polite">
+            <h3 id="strengthPhaseTitle"></h3>
+            <p id="strengthPhaseSummary"></p>
+            <p id="strengthSchedule"></p>
+          </div>
           <div id="strengthGrid" class="strength-grid"></div>
           <div id="strengthGuardrails" class="strength-guardrails"></div>
+          <details class="strength-reference" open>
+            <summary>How to progress · 12-week program</summary>
+            <div id="strengthProgression" class="strength-progression"></div>
+          </details>
+          <details class="strength-reference">
+            <summary>Research, elite practice and program references</summary>
+            <p id="strengthEvidence"></p>
+            <div id="strengthEvidenceMap" class="strength-progression"></div>
+            <ul id="strengthSources"></ul>
+          </details>
         </section>
 
         <section class="lower-grid">
@@ -154,7 +170,7 @@
       </footer>
     </div>
 
-    <script src="data.js?v=20260920-review"></script>
-    <script src="app.js?v=20260920-review"></script>
+    <script src="data.js?v=20260921-strength"></script>
+    <script src="app.js?v=20260921-strength"></script>
   </body>
 </html>

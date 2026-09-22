@@ -161,28 +161,41 @@
       .join("");
   }
 
+  let strengthPhase = data.strength.activePhase;
+
   function renderStrength() {
+    const plan = data.strength;
+    const phase = plan.phases.find((item) => item.id === strengthPhase) || plan.phases[0];
+    const isCurrent = phase.id === plan.activePhase;
     const stored = JSON.parse(localStorage.getItem("hm-dashboard-strength") || "{}");
-    $("#strengthGrid").innerHTML = data.strength.sessions
+    $("#strengthIntro").textContent = plan.intro;
+    $("#strengthPhases").innerHTML = plan.phases.map((item) =>
+      `<button type="button" data-strength-phase="${item.id}" aria-pressed="${item.id === phase.id}" aria-controls="strengthGrid">${item.label}</button>`
+    ).join("");
+    $("#strengthPhaseTitle").textContent = phase.title;
+    $("#strengthPhaseSummary").textContent = phase.summary;
+    $("#strengthSchedule").textContent = phase.schedule;
+    $("#strengthGrid").classList.toggle("two-sessions", phase.sessions.length === 2);
+    $("#strengthGrid").innerHTML = phase.sessions
       .map(
         (session) => `
           <article class="strength-card ${session.tone}">
             <div class="strength-card-head">
               <div><span>${session.day}</span><h3>${session.title}</h3></div>
-              <span class="session-type">${session.tone}</span>
+              <span class="session-type">${session.label || session.tone}</span>
             </div>
             <p class="strength-timing">${session.timing}</p>
             <div class="exercise-list">
               ${session.exercises
                 .map((exercise, index) => {
-                  const key = `${session.id}-${index}`;
+                  const key = `${phase.id}-${session.id}-${index}`;
                   const completed = Boolean(stored[key]);
                   return `
-                    <button class="exercise ${completed ? "completed" : ""}" data-exercise="${key}" aria-pressed="${completed}">
-                      <span class="exercise-check">${completed ? "✓" : ""}</span>
+                    <${isCurrent ? "button" : "div"} class="exercise ${isCurrent ? "" : "preview"} ${isCurrent && completed ? "completed" : ""}" ${isCurrent ? `type="button" data-exercise="${key}" aria-pressed="${completed}"` : ""}>
+                      <span class="exercise-check" aria-hidden="true">${isCurrent && completed ? "✓" : ""}</span>
                       <span class="exercise-copy"><strong>${exercise.name}</strong><small>${exercise.note}</small></span>
                       <b>${exercise.dose}</b>
-                    </button>`;
+                    </${isCurrent ? "button" : "div"}>`;
                 })
                 .join("")}
             </div>
@@ -191,11 +204,30 @@
       )
       .join("");
 
-    $("#strengthGuardrails").innerHTML = data.strength.guardrails
+    $("#strengthGuardrails").innerHTML = plan.guardrails
       .map((guardrail) => `<span>${guardrail}</span>`)
       .join("");
 
-    document.querySelectorAll(".exercise").forEach((button) => {
+    $("#strengthProgression").innerHTML = plan.progression.map((item) =>
+      `<article><h4>${item.title}</h4><p>${item.text}</p></article>`
+    ).join("");
+    $("#strengthEvidence").textContent = plan.evidence;
+    $("#strengthEvidenceMap").innerHTML = (plan.evidenceMap || []).map((item) =>
+      `<article><h4>${item.title}</h4><p>${item.text}</p></article>`
+    ).join("");
+    $("#strengthSources").innerHTML = plan.sources.map((item) =>
+      `<li><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a></li>`
+    ).join("");
+
+    document.querySelectorAll("[data-strength-phase]").forEach((button) => {
+      button.addEventListener("click", () => {
+        strengthPhase = button.dataset.strengthPhase;
+        renderStrength();
+        document.querySelector(`[data-strength-phase="${strengthPhase}"]`).focus({ preventScroll: true });
+      });
+    });
+
+    document.querySelectorAll("[data-exercise]").forEach((button) => {
       button.addEventListener("click", () => {
         const state = JSON.parse(localStorage.getItem("hm-dashboard-strength") || "{}");
         state[button.dataset.exercise] = !state[button.dataset.exercise];
@@ -226,7 +258,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260920-review").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260921-strength").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();

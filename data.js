@@ -1,21 +1,21 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 20, 2026 · 50.37-mile week reviewed",
-  revision: "20260920-review",
+  updatedAt: "September 21, 2026 · strength & power plan",
+  revision: "20260921-strength",
   raceGoal: { time: "1:38", pace: "7:29/mi", status: "Provisional; confirm with recovered effort" },
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Durability progressing · absorb the load",
+    label: "Recovery rebounding · build strength gradually",
     metrics: [
       { label: "Running this week", value: "50.37", unit: "mi · 44.37 last week", tone: "good" },
-      { label: "Readiness after long run", value: "27", unit: "morning 55 · vendor estimate", tone: "warn" },
-      { label: "Overnight HRV", value: "75", unit: "ms · 7-day 96 balanced", tone: "warn" },
-      { label: "Sleep", value: "6:51", unit: "score 73 · RHR 51", tone: "warn" }
+      { label: "Sep 21 readiness", value: "75", unit: "morning 70 · vendor estimate", tone: "good" },
+      { label: "Sep 21 overnight HRV", value: "101", unit: "ms · 7-day 94 balanced", tone: "good" },
+      { label: "Sep 21 sleep", value: "9:30", unit: "score 93 · RHR 47", tone: "good" }
     ],
-    note: "Week: 50.37 running miles versus ~43 planned, plus 52.5 min swimming, 46.9 min strength and 124.9 min soccer (~12:16 recorded total). Sep 20: 15.02 mi at 10:29/mi, HR 151, recorded RPE 4. First/last five miles ~10:30/10:29 at HR 152/153, stable cadence; ~9:56 paused, so not a continuous fitness test. Overnight HRV 125 → 111 → 95 → 82 → 79 → 75 since Tuesday; RHR rose from 43–45 to 49–52. These contextual recovery signals warrant consolidation, not a diagnosis. Strength exercise content, fueling, current soreness and weekend confounders await athlete feedback."
+    note: "Week: 50.37 running miles versus ~43 planned, plus 52.5 min swimming, 46.9 min strength and 124.9 min soccer (~12:16 recorded total). Sep 20: 15.02 mi at 10:29/mi, HR 151, recorded RPE 4. First/last five miles ~10:30/10:29 at HR 152/153, stable cadence; ~9:56 paused, so not a continuous fitness test. Overnight HRV 125 → 111 → 95 → 82 → 79 → 75 since Tuesday; RHR rose from 43–45 to 49–52. These contextual recovery signals warrant consolidation, not a diagnosis. Sep 21 recovery rebounded: sleep 9:30, score 93, HRV 101 / weekly 94 balanced, RHR 47 and readiness 70 morning / 75 later. One better night supports recovery but does not confirm local muscle readiness. Strength on Sep 7, 8, 12 and 17 is recorded; squat/deadlift content and current limitations remain unconfirmed."
   },
   week: {
-    label: "SEP 7 — SEP 27 · SEP 14–20 REVIEWED",
+    label: "SEP 7 — SEP 27 · SEP 21–27 PLANNED",
     targetMiles: 50.37,
     days: [
       { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true, weekMarker: "Last week" },
@@ -26,7 +26,7 @@ window.TRAINING_DATA = {
       { date: "2026-09-12", day: "Sat", miles: 6.61, type: "easy", title: "Easy + strength complete", detail: "11:20/mi · HR 144 · 50 min strength before · combined load 57", completed: true },
       { date: "2026-09-13", day: "Sun", miles: 13.18, type: "long", title: "Long run complete", detail: "10:51/mi · HR 153 · load 123 · minimal drift · end stamina 69", key: true, completed: true },
       {
-        date: "2026-09-14", day: "Mon", miles: 0, type: "rest", title: "Recovery swim complete", detail: "1,000 m · 32:54 total · HR 115 · load 36", weekMarker: "Current week", completed: true,
+        date: "2026-09-14", day: "Mon", miles: 0, type: "rest", title: "Recovery swim complete", detail: "1,000 m · 32:54 total · HR 115 · load 36", weekMarker: "Sep 14–20 · reviewed", completed: true,
         workout: {
           date: "2026-09-14", type: "rest", title: "Recovery swim complete",
           details: [
@@ -129,12 +129,12 @@ window.TRAINING_DATA = {
         }
       },
       {
-        date: "2026-09-21", day: "Mon", miles: 0, type: "rest", title: "Recovery swim + upper", detail: "20–30 min gentle swim · upper if fresh · run-rest", weekMarker: "Next week · recovery-gated",
+        date: "2026-09-21", day: "Mon", miles: 0, type: "rest", title: "Recovery swim + upper", detail: "20–30 min gentle swim · upper if fresh · run-rest", weekMarker: "Current week · recovery-gated",
         workout: {
           date: "2026-09-21", type: "rest", title: "Absorb 50 miles · gentle swim + upper",
           details: [
             { label: "Swim", value: "20–30 min relaxed RPE 1–2; rest instead if exhausted or unwell" },
-            { label: "Upper", value: "20–30 min only if fresh; RPE ≤6–7, no failure" },
+            { label: "Upper", value: "Bench 2 × 5, pull-up/pulldown 2 × 5–6, supported row 2 × 8; RPE 6–7, 20–30 min if fresh" },
             { label: "Running", value: "Rest" },
             { label: "Week budget", value: "Up to 45 mi without soccer / 39 with it; 90–100 min cross-training and one lower slot. Do not chase 55." },
             { label: "Recovery", value: "Eat full recovery meals, hydrate and prioritize sleep; no compensatory calorie restriction" },
@@ -152,7 +152,7 @@ window.TRAINING_DATA = {
             { label: "Warm-up", value: "2 mi easy + familiar drills + 4 × 15 sec relaxed pickups with full easy recovery" },
             { label: "Work", value: "3 × 8 min, 2 min easy jog; RPE 6–7, short phrases, finish with another rep available" },
             { label: "Pacing", value: "Start clearly easier than Sep 16; no fixed target or HR cap. Slow if effort rises beyond controlled." },
-            { label: "Lower later", value: "Use the low end of Tuesday lower prescription, ideally ≥6 hours later; no progression in load this week" },
+            { label: "Lower later", value: "Squat 2 × 3 RPE 6; familiar split squat 1 × 5/leg; curl 1–2 × 8; seated calf 2 × 10; standing calf 1 × 8. Ideally ≥6 h later; no jumps/load increase" },
             { label: "Decision", value: "Only with normal legs/warm-up and stabilizing recovery. If not ready, 6 easy instead; no quality make-up Wednesday." },
             { label: "Fallback strength", value: "A short familiar dose may remain if only quality is deferred and legs are normal. Pain/illness/persistent fatigue: reassess; reserve Sat Sep 26 after easy running only if recovered and no Friday hard work." }
           ],
@@ -179,7 +179,7 @@ window.TRAINING_DATA = {
           details: [
             { label: "Run", value: "7 mi RPE 2–3, no fast finish" },
             { label: "Swim", value: "25 min relaxed RPE 2; no intervals or hard kick sets" },
-            { label: "Upper B", value: "Optional 25–30 min only if fresh; less important than completing weekly lower work" }
+            { label: "Upper B", value: "Optional: strict DB press 2 × 6, supported row 2 × 8, Pallof 2 × 8/side; RPE 6, 20–25 min" }
           ],
           purpose: "Maintain easy aerobic frequency and reach 90–100 scheduled cross-training minutes this week without borrowing from Friday quality."
         }
@@ -225,54 +225,422 @@ window.TRAINING_DATA = {
     ]
   },
   strength: {
-    sessions: [
+    "activePhase": "now",
+    "intro": "Build strength, muscle and rapid force production alongside endurance. Inspired by Candito’s simple progression and strength/control/power themes; adapted to two full-body sessions after race recovery. The dated plan below takes priority today.",
+    "phases": [
       {
-        id: "upper-a",
-        day: "Monday",
-        title: "Upper A",
-        timing: "After the swim or separated by several hours",
-        tone: "upper",
-        exercises: [
-          { name: "Bench press", dose: "Candito primary sets", note: "Cap at RPE 8; no optional back-off volume" },
-          { name: "Weighted pull-up", dose: "3 × 4–6", note: "Leave 2 reps in reserve" },
-          { name: "Strict press", dose: "2 × 5–6", note: "Use strict press instead of push press" },
-          { name: "Chest-supported row", dose: "3 × 6–10", note: "Controlled; leave 2 reps in reserve" }
+        "id": "now",
+        "label": "Now · Sep 21–27",
+        "title": "Current prescription · familiar work",
+        "summary": "One lower anchor plus brief upper work after the 50.37-mile week. Recent squat/deadlift content and injury limitations remain unconfirmed: use only familiar exercises. New jumps, new hinges and load progression begin after San Jose recovery.",
+        "schedule": "Mon upper if fresh • Tue lower • Thu optional upper. Tuesday: normal gait/legs and warm-up required. If only run quality is deferred but legs are normal, familiar lower work may remain. If pain, illness or persistent fatigue prevents lifting, reserve Sat Sep 26 only if recovered and Friday had no hard work; otherwise reassess on Sep 28. No catch-up volume.",
+        "sessions": [
+          {
+            "id": "upper-20260921",
+            "day": "Mon Sep 21 · if fresh",
+            "title": "Upper maintenance",
+            "timing": "20–30 min after the gentle swim or separated by several hours. Rest 2 min between sets; all work RPE 6–7.",
+            "tone": "upper",
+            "exercises": [
+              {
+                "name": "Bench press",
+                "dose": "2 × 5",
+                "note": "Familiar weight; 3–4 reps in reserve."
+              },
+              {
+                "name": "Pull-up or pulldown",
+                "dose": "2 × 5–6",
+                "note": "Choose the familiar version; leave 3 reps."
+              },
+              {
+                "name": "Chest-supported row",
+                "dose": "2 × 8",
+                "note": "Controlled movement; no failure."
+              }
+            ]
+          },
+          {
+            "id": "lower-20260922",
+            "day": "Tue Sep 22 · weekly anchor",
+            "title": "Familiar lower strength",
+            "timing": "25–35 min, ideally ≥6 h after the controlled run. Warm up 5–8 min and use 2–4 progressively heavier squat warm-up sets. Working sets below; rest 2–3 min on squat, 60–90 sec on accessories.",
+            "tone": "lower",
+            "exercises": [
+              {
+                "name": "Back squat",
+                "dose": "2 × 3 · RPE 6",
+                "note": "Familiar variation/load only; about 4 reps in reserve. No load increase this week."
+              },
+              {
+                "name": "Split squat",
+                "dose": "1 × 5 / leg",
+                "note": "Only if recently practiced; comfortable range, no slow lowering emphasis."
+              },
+              {
+                "name": "Hamstring curl",
+                "dose": "1–2 × 8 · RPE 6",
+                "note": "Use 1 set if returning; only a familiar exercise."
+              },
+              {
+                "name": "Seated bent-knee calf raise",
+                "dose": "2 × 10",
+                "note": "Comfortable familiar load; leave 3–4 reps."
+              },
+              {
+                "name": "Standing calf raise",
+                "dose": "1 × 8",
+                "note": "Straight knee; controlled, no failure."
+              }
+            ]
+          },
+          {
+            "id": "upper-20260924",
+            "day": "Thu Sep 24 · optional",
+            "title": "Short upper + trunk",
+            "timing": "20–25 min only if fresh after the easy run/swim. This does not replace Tuesday lower strength.",
+            "tone": "upper",
+            "exercises": [
+              {
+                "name": "Strict dumbbell press",
+                "dose": "2 × 6 · RPE 6",
+                "note": "Familiar movement; no leg drive."
+              },
+              {
+                "name": "Chest-supported row",
+                "dose": "2 × 8 · RPE 6",
+                "note": "Keep shoulders comfortable for swimming."
+              },
+              {
+                "name": "Pallof press",
+                "dose": "2 × 8 / side",
+                "note": "Steady trunk; breathe normally."
+              }
+            ]
+          }
         ]
       },
       {
-        id: "lower",
-        day: "Tuesday Sep 22 · weekly anchor",
-        title: "Lower-body development",
-        timing: "Tue Sep 22, after running and preferably ≥6 hours later. Use low-end set counts after the 50-mile week; familiar loads only. If genuinely unrecovered, reassess for Sat Sep 26 provided Friday had no hard work, rather than leaving an undated deferral.",
-        tone: "lower",
-        exercises: [
-          { name: "Back squat", dose: "2–3 × 3 · RPE 6–7", note: "Start with 2 sets if no recent lower training; familiar load, ≥3 reps in reserve" },
-          { name: "Bulgarian split squat", dose: "1–2 × 5 / side", note: "Start with 1 set if returning; no new loading or deep eccentric emphasis" },
-          { name: "Hamstring curl", dose: "2 × 8 · RPE 6", note: "Only a familiar variation; do not introduce sore-inducing new work before the race" },
-          { name: "Bent-knee soleus raise", dose: "2 × 10–15", note: "Controlled familiar load; no failure" },
-          { name: "Standing calf raise", dose: "2 × 8–12", note: "Straight knee; no failure" }
-        ],
-        alternative: "This is a modified strength program, not full Candito. After San Jose recovery, progress familiar squat/hinge loads and consider a second short lower exposure. Cleans are not automatically easier to recover from and are not a substitute for all posterior-chain work."
+        "id": "race",
+        "label": "Race week · Sep 28–Oct 4",
+        "title": "Preview · one light strength touch",
+        "summary": "Keep familiarity while reducing fatigue. This is the lifting overlay for race week, not a new running prescription. No jumps, new exercises, heavy hinges or load increases. Skip the touch if you are sore or not recovered.",
+        "schedule": "Tue Sep 29: brief full body only if last week’s lower dose was well tolerated. Wed–Sat: no lower lifting. Sun Oct 4: San Jose. Oct 5–11: recover; light upper work when comfortable, no forced lower training. Reassess Oct 12; earliest proposed A/B dates are Oct 13 and 16 if walking, stairs and easy running feel normal.",
+        "sessions": [
+          {
+            "id": "race-20260929",
+            "label": "full body",
+            "day": "Tue Sep 29 · if tolerated last week",
+            "title": "Race-week strength touch",
+            "timing": "15–20 min after easy running, separated if possible. Only if Sep 22 caused no meaningful soreness. Familiar lifts only; all work RPE 5–6. No further lower lifting before Oct 4.",
+            "tone": "lower",
+            "exercises": [
+              {
+                "name": "Back squat",
+                "dose": "1–2 × 3",
+                "note": "Choose 1 set if any uncertainty; no increase in load."
+              },
+              {
+                "name": "Bench press",
+                "dose": "1–2 × 4",
+                "note": "Stop well before fatigue."
+              },
+              {
+                "name": "Pull-up or pulldown",
+                "dose": "1–2 × 4",
+                "note": "Easy familiar version."
+              },
+              {
+                "name": "Standing calf raise",
+                "dose": "1 × 8",
+                "note": "Only if familiar and completely comfortable."
+              }
+            ]
+          }
+        ]
       },
       {
-        id: "upper-b",
-        day: "Thursday · optional",
-        title: "Upper B",
-        timing: "25–30 min if fresh; the second upper session does not displace lower-body training",
-        tone: "upper",
-        exercises: [
-          { name: "Bench press", dose: "Candito secondary sets", note: "Cap at RPE 7–8; no AMRAP or failure" },
-          { name: "Weighted pull-up", dose: "3 × 5", note: "Leave 2–3 reps in reserve" },
-          { name: "One-arm or cable row", dose: "3 × 8 / side", note: "No torso grinding" },
-          { name: "Pallof press", dose: "2 × 10 / side", note: "Slow anti-rotation control" }
+        "id": "build",
+        "label": "Build · 12 weeks",
+        "title": "Preview · two full-body sessions",
+        "summary": "Start after post-HM recovery, provisionally the week of Oct 12. These sessions replace the old upper/lower split; they are not additional workouts. Weeks 1–2 reintroduce the work, then gradually build strength and power with low fatigue.",
+        "schedule": "Default: Tue A after threshold; Fri B after controlled faster running, with Sunday long run easy. Keep ≥48 h between lifts and aim for ≥48 h before the long run. Soccer week: A Tuesday, B becomes upper + trunk only Thursday (incline press 2 × 6, supported row 2 × 8, Pallof 2 × 8/side); omit B jumps/lower work and Friday running quality. Resume two full-body sessions the next no-soccer week. If soccer is weekly, redesign the week rather than stacking another hard lower day.",
+        "sessions": [
+          {
+            "id": "build-a",
+            "label": "full body",
+            "day": "Tuesday · after threshold",
+            "title": "A · Strength + power",
+            "timing": "50–60 min, preferably ≥6 h after running and refueled. Power first after warming up; omit jumps if the run left you flat. Rest 90–120 sec for jumps, 2–3 min for compound lifts and 60–90 sec for accessories.",
+            "tone": "lower",
+            "exercises": [
+              {
+                "name": "Countermovement jump",
+                "dose": "3 × 3",
+                "note": "Bodyweight, individual reps with a reset; land quietly. Start at 2 × 3 in weeks 1–2; stop when height or landing quality declines."
+              },
+              {
+                "name": "Back squat",
+                "dose": "3 × 3 · RPE 7–8",
+                "note": "Controlled descent; drive up with fast intent. Leave 2–3 reps, never grind."
+              },
+              {
+                "name": "Bench press",
+                "dose": "3 × 4–6 · RPE 7–8",
+                "note": "Build all sets from 4 toward 6 before increasing weight."
+              },
+              {
+                "name": "Pull-up or pulldown",
+                "dose": "3 × 4–6 · RPE 7–8",
+                "note": "Use assistance/bodyweight/added weight to retain 2–3 reps."
+              },
+              {
+                "name": "Split squat",
+                "dose": "2 × 5 / leg · RPE 7",
+                "note": "Start with 1 set per leg; controlled range, no exaggerated slow eccentrics."
+              },
+              {
+                "name": "Standing calf raise",
+                "dose": "2 × 6–8 · RPE 7",
+                "note": "Full comfortable range, no bouncing."
+              },
+              {
+                "name": "Pallof press",
+                "dose": "2 × 8 / side",
+                "note": "Controlled anti-rotation; stop before trunk position changes."
+              }
+            ]
+          },
+          {
+            "id": "build-b",
+            "label": "full body",
+            "day": "Friday · no-soccer week",
+            "title": "B · Hinge + control",
+            "timing": "45–60 min, preferably ≥6 h after the run; aim for ≥48 h before Sunday’s long run. If Friday intensity leaves legs dull, remove jumps and use the maintenance dose. Do not put this after a long ride/brick.",
+            "tone": "lower",
+            "exercises": [
+              {
+                "name": "Countermovement jump",
+                "dose": "3 × 3",
+                "note": "Same low-volume power practice as A; 2 × 3 in weeks 1–2. Full reset between reps, no depth jumps."
+              },
+              {
+                "name": "Conventional or trap-bar deadlift",
+                "dose": "2 × 3 · RPE 7",
+                "note": "Choose one familiar variation for the block; reset each rep. No max attempts."
+              },
+              {
+                "name": "Paused squat",
+                "dose": "2 × 3 · RPE 6",
+                "note": "Light technique work with a comfortable 1-second pause. Introduce after the HM; omit in weeks 1–2 if unfamiliar."
+              },
+              {
+                "name": "Incline dumbbell press",
+                "dose": "2 × 6–8 · RPE 7",
+                "note": "If overhead strength is a priority, use familiar strict press instead for the whole block."
+              },
+              {
+                "name": "Chest-supported row",
+                "dose": "3 × 6–8 · RPE 7",
+                "note": "Use support to limit additional low-back fatigue."
+              },
+              {
+                "name": "Hamstring curl",
+                "dose": "2 × 8 · RPE 7",
+                "note": "Start at 1 set if returning; no failure or new Nordics."
+              },
+              {
+                "name": "Seated bent-knee calf raise",
+                "dose": "2 × 10–12 · RPE 7",
+                "note": "Direct bent-knee plantar-flexor work; no bouncing."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "maintenance",
+        "label": "Peak marathon / 70.3",
+        "title": "Preview · retain strength, trim sets",
+        "summary": "Use when long rides, bricks or marathon-specific running dominate. Two shorter strength exposures remain the default; one full-body session is the fallback during an unusually demanding week. Maintain established strength rather than chase lifting records.",
+        "schedule": "For a Sat long ride/brick + Sun long run: place A Monday only if recovered from the previous weekend and B Wednesday; keep Tuesday quality and Wednesday legs compatible. If Monday is not recovered, use one Tuesday session: A without jumps plus 1 × 3 familiar deadlift at RPE 6–7, replacing B that week. Final placement depends on the actual Tokyo/70.3 calendar. Reduce sets again before an A race; the last familiar lower touch is usually 5–7 days before, adjusted to your soreness response.",
+        "sessions": [
+          {
+            "id": "maint-a",
+            "label": "full body",
+            "day": "Early week · anchor",
+            "title": "A · Maintain strength",
+            "timing": "25–35 min after a quality day, ideally ≥6 h apart. Use established loads at RPE 7; no progression during a new endurance-load peak.",
+            "tone": "lower",
+            "exercises": [
+              {
+                "name": "Countermovement jump",
+                "dose": "2 × 2",
+                "note": "Only if fresh and already accustomed; otherwise omit."
+              },
+              {
+                "name": "Back squat",
+                "dose": "2 × 3 · RPE 7",
+                "note": "Keep the strength stimulus; no grinders."
+              },
+              {
+                "name": "Bench press",
+                "dose": "2 × 4 · RPE 7",
+                "note": "Leave 3 reps."
+              },
+              {
+                "name": "Pull-up or pulldown",
+                "dose": "2 × 4–6 · RPE 7",
+                "note": "Comfortable shoulders for swimming."
+              },
+              {
+                "name": "Standing calf raise",
+                "dose": "1 × 8",
+                "note": "Familiar load, leave 3 reps."
+              }
+            ]
+          },
+          {
+            "id": "maint-b",
+            "label": "full body",
+            "day": "Midweek · away from long sessions",
+            "title": "B · Brief second exposure",
+            "timing": "20–30 min, ≥48 h after A and preferably ≥48 h before the longest ride/brick or run. Upper-body exercises can alternate as in the build plan.",
+            "tone": "lower",
+            "exercises": [
+              {
+                "name": "Conventional or trap-bar deadlift",
+                "dose": "1–2 × 3 · RPE 7",
+                "note": "Use the established variation; 1 set during the heaviest endurance weeks."
+              },
+              {
+                "name": "Incline dumbbell press",
+                "dose": "1–2 × 6 · RPE 7",
+                "note": "No failure."
+              },
+              {
+                "name": "Chest-supported row",
+                "dose": "2 × 6 · RPE 7",
+                "note": "No low-back grinding."
+              },
+              {
+                "name": "Hamstring curl",
+                "dose": "1 × 8",
+                "note": "Familiar, controlled."
+              },
+              {
+                "name": "Seated bent-knee calf raise",
+                "dose": "1 × 10",
+                "note": "Leave 3 reps."
+              }
+            ]
+          }
         ]
       }
     ],
-    guardrails: [
-      "One scheduled lower session now; consider a second short exposure after race recovery",
-      "No lower-body AMRAPs or grinders",
-      "Stop cleans when speed or technique fades",
-      "Reduce lower volume in race week; no new lifts or soreness-inducing work"
+    "progression": [
+      {
+        "title": "Warm up and choose the load",
+        "text": "5–8 minutes easy movement, then 2–4 progressively heavier warm-up sets for the first lower lift and 1–2 for upper lifts. Listed sets are working sets. RPE 6 ≈ 4 reps left; 7 ≈ 3; 8 ≈ 2. Start from today’s ability, not an old one-rep max. Lower under control and lift with fast intent while keeping technique. After re-entry, squat/hinge working loads will often be around 80–85% of a current estimated maximum, but the RPE/technique cap governs; do not test a maximum to set them."
+      },
+      {
+        "title": "Weeks 1–2 · re-entry",
+        "text": "After HM recovery: use 2 working sets for each main lift and 1 set for each accessory at RPE 6–7. Jump only 2 × 3 per session if pain-free and landings are controlled; omit paused squats if unfamiliar. Hold running mileage and other training roughly steady while introducing this combination."
+      },
+      {
+        "title": "Weeks 3–4 · build, then absorb",
+        "text": "Week 3: use the listed build sets if week 2 caused no disruptive soreness or loss of run quality. Week 4: halve working sets, rounding up; RPE 6–7; halve or omit jumps. No failure tests or AMRAPs."
+      },
+      {
+        "title": "Weeks 5–12 · repeat and progress",
+        "text": "Weeks 5–7 and 9–11: use normal A/B sets; weeks 8 and 12: repeat the lighter week. On fixed triples, add the smallest increment (about 2.5–5 lb upper / 5 lb lower) only after two successful exposures within the RPE cap and normal next-day movement. On rep ranges, first reach the top on every set, then add weight and return to the bottom. Do not increase weight and set count together. Holding weight is a valid progression decision."
+      },
+      {
+        "title": "Power stays crisp",
+        "text": "After a warm-up, perform jumps before lifting. Reset between reps; rest 90–120 seconds between sets. Stop with loss of height, noisy/unstable landings or discomfort. Progress from 2 × 3 to 3 × 3; do not keep adding contacts or weight. This complements existing relaxed strides; no additional all-out sprint day is prescribed."
+      },
+      {
+        "title": "Adjust to the whole training week",
+        "text": "If soreness affects gait or persists beyond 48 hours, or two key runs worsen after lifting: halve lower accessories, remove B paused squats/jumps and hold loads. If the RPE cap is exceeded, reduce the load 5–10%. Sharp/localized pain or altered gait: stop the offending exercise and assess. Reassess the next scheduled session rather than abandoning strength indefinitely."
+      },
+      {
+        "title": "Measure what matters",
+        "text": "Record working weight, reps, last-set RPE and next-day soreness. Review every four weeks: same weight feels easier or more weight at the same RPE, crisp jumps and preserved run quality. These are performance markers, not measurements of muscle-fiber type. Fuel the combined training; do not add a deliberate aggressive deficit during workload increases."
+      }
+    ],
+    "guardrails": [
+      "Two full-body days after race recovery; one familiar lower day now",
+      "No failed reps, AMRAPs or one-rep-max tests",
+      "Separate running and lifting by about 6 h where practical; skip power when fatigued",
+      "New power work begins after San Jose, not during the taper"
+    ],
+    "evidence": "Endurance training does not simply convert all muscle to slow twitch. Heavy lifting and brief explosive work train high-force and rapid-force abilities that endurance alone may underdevelop. Concurrent training can improve strength and muscle size, although explosive-strength gains can be blunted, particularly within the same session. Strength training can improve running economy; this exact program is a coaching adaptation, not a guaranteed result or a muscle-fiber preservation test.",
+    "sources": [
+      {
+        "title": "Candito Linear Programming · author’s PDF (mirror)",
+        "url": "https://liftpedia.wordpress.com/wp-content/uploads/2016/11/candito-linear-program-2.pdf"
+      },
+      {
+        "title": "Concurrent strength/endurance meta-analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34757594/"
+      },
+      {
+        "title": "Strength training and running economy",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38165636/"
+      },
+      {
+        "title": "Støren et al. 2008 · heavy strength in distance runners",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18460997/"
+      },
+      {
+        "title": "Paavolainen et al. 1999 · explosive training in well-trained runners",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10233114/"
+      },
+      {
+        "title": "Rønnestad et al. 2015 · strength in elite cyclists",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24862305/"
+      },
+      {
+        "title": "ACSM 2026 · resistance-training position stand",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+      },
+      {
+        "title": "Olympiatoppen · strength, jumping and speed department",
+        "url": "https://olympiatoppen.no/fagomrader/styrke/"
+      },
+      {
+        "title": "Olympiatoppen · athlete testing and monitoring",
+        "url": "https://olympiatoppen.no/fagomrader/styrke/testing/"
+      },
+      {
+        "title": "Olympiatoppen · 2024 intensity framework (English)",
+        "url": "https://olt-skala.nif.no/olt_2024_en.pdf"
+      }
+    ],
+    "evidenceMap": [
+      {
+        "title": "Heavy strength · runner evidence",
+        "text": "Støren et al. (2008): a small 8-week trial in well-trained distance runners used half-squats, 4 × 4RM, three times weekly, and improved running economy and force production. Llanos-Lagos et al. (2024) synthesized 31 studies and supports high-load or combined methods, with effects varying by speed and study quality. Application: progressively heavier squat/hinge work. Our lower-volume, subfailure dose is an adaptation; the trial does not validate these exact sets."
+      },
+      {
+        "title": "Explosive work · Olympic-sport research",
+        "text": "Paavolainen et al. (1999), from Finland’s Research Institute for Olympic Sports: 18 well-trained endurance athletes over 9 weeks; the explosive-training group improved 5-km performance, economy and power. Training was partly replaced, not simply added. Application: a small jump dose and existing strides, while managing total workload. This does not establish that 18 jumps per week is an optimal or equivalent dose."
+      },
+      {
+        "title": "Strength alongside cycling · elite evidence",
+        "text": "Rønnestad et al. (2015): 16 young elite cyclists studied over 25 weeks; adding heavy strength improved several power/performance measures, with no change in VO2max or cycling economy. Application: keep lower strength through the 70.3 build, reduce its volume as endurance demands rise. This is cycling evidence, not a direct trial of this triathlon program."
+      },
+      {
+        "title": "Frequency, effort and progression · established guidance",
+        "text": "ACSM’s 2026 position stand supports progressive resistance training, heavier loads for strength and intentional fast contractions for power; routine failure is unnecessary. Candito supplies the simple progression and heavy/control/power structure. Our RPE caps, two-session split and every-fourth-week reduction are coaching choices to manage concurrent training; no evidence establishes this exact 12-week calendar as uniquely best."
+      },
+      {
+        "title": "Session spacing · concurrent-training evidence",
+        "text": "Schumann et al. (2022): 43 studies found no overall impairment of maximal strength or muscle hypertrophy, but a small reduction in explosive-strength gains, especially when endurance and strength shared a session. Application: separate by several hours when practical. Six hours is a scheduling target, not a proven universal threshold; stop power work when quality falls."
+      },
+      {
+        "title": "Olympic-system practice · individualize and monitor",
+        "text": "Norway’s Olympiatoppen integrates strength, jumping and speed with the sport’s overall plan and uses testing to guide and evaluate training. Its intensity framework distinguishes neuromuscular from aerobic work. Application: track strength at a given effort, jump quality, soreness and endurance performance together. These are documented system principles, not a claim that every Olympian follows one lifting program."
+      }
     ]
   },
   volume: [
@@ -287,9 +655,9 @@ window.TRAINING_DATA = {
     { icon: "↘", title: "Easy means easy", text: "Use conversational effort. Pace can float with heat and fatigue." },
     { icon: "◇", title: "Fuel the work", text: "Do not create the calorie deficit around threshold or long-run sessions." },
     { icon: "⚑", title: "Two quality slots, not three", text: "Tuesday controlled threshold; Friday modest aerobic-power work if no soccer and recovered. Soccer uses Friday's recovery budget but is not a VO2 substitute. Keep the long run easy." },
-    { icon: "⌁", title: "Protect weekly lower training", text: "Tuesday lower is scheduled, not a leftover. Scale its dose to recent lifting history. If genuinely unready, document why and set the replacement date." },
+    { icon: "⌁", title: "Protect weekly lower training", text: "Tuesday familiar lower is scheduled now. After HM recovery, two full-body sessions replace the old split. Scale sets to running, soccer and the future triathlon schedule." },
     { icon: "+", title: "Schedule aerobic support", text: "Next week: Mon 20–30-min swim, Wed 45-min bike, Thu 25-min swim = 90–100 min. Keep it easy; do not increase running and supplemental volume together." },
-    { icon: "↗", title: "Build toward 65 mpw", text: "Establish 45–50, then hold and progress through 55 and 60 before 65. Pair it with 2–4 easy cross-training hours rather than forcing 75–80 running miles." }
+    { icon: "↗", title: "Build toward 65 mpw", text: "65 mpw remains a possible long-term running objective, not a requirement during 70.3 training. Tokyo and a 2027 70.3 are athlete-confirmed; event details are pending. Set sustainable run volume alongside swim/bike demands and two strength exposures." }
   ]
 };
 
