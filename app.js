@@ -258,7 +258,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260921-strength").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260922-upper-lower").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();
