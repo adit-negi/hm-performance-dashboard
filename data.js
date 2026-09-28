@@ -1,22 +1,22 @@
 window.TRAINING_DATA = {
-  updatedAt: "September 22, 2026 · fixed Upper / Lower / Upper",
-  revision: "20260922-upper-lower",
-  raceGoal: { time: "1:38", pace: "7:29/mi", status: "Provisional; confirm with recovered effort" },
+  updatedAt: "September 27, 2026 · illness-adjusted race week",
+  revision: "20260927-illness",
+  raceGoal: { time: "1:38", pace: "7:29/mi", status: "On hold pending recovery; participation not yet confirmed" },
   raceDate: "2026-10-04T07:00:00-07:00",
   blockStart: "2026-08-03T00:00:00-07:00",
   recovery: {
-    label: "Recovery rebounding · build strength gradually",
+    label: "Sore throat · health before race",
     metrics: [
-      { label: "Running this week", value: "50.37", unit: "mi · 44.37 last week", tone: "good" },
-      { label: "Sep 21 readiness", value: "75", unit: "morning 70 · vendor estimate", tone: "good" },
-      { label: "Sep 21 overnight HRV", value: "101", unit: "ms · 7-day 94 balanced", tone: "good" },
-      { label: "Sep 21 sleep", value: "9:30", unit: "score 93 · RHR 47", tone: "good" }
+      { label: "Sep 21–27 running", value: "22.51", unit: "mi recorded · weekend illness", tone: "warn" },
+      { label: "Sep 27 recovery", value: "—", unit: "not synced / unavailable", tone: "warn" },
+      { label: "Latest HRV · Sep 25", value: "67", unit: "ms · not today's reading", tone: "warn" },
+      { label: "Latest RHR · Sep 25", value: "53", unit: "bpm · current symptoms take priority", tone: "warn" }
     ],
-    note: "Week: 50.37 running miles versus ~43 planned, plus 52.5 min swimming, 46.9 min strength and 124.9 min soccer (~12:16 recorded total). Sep 20: 15.02 mi at 10:29/mi, HR 151, recorded RPE 4. First/last five miles ~10:30/10:29 at HR 152/153, stable cadence; ~9:56 paused, so not a continuous fitness test. Overnight HRV 125 → 111 → 95 → 82 → 79 → 75 since Tuesday; RHR rose from 43–45 to 49–52. These contextual recovery signals warrant consolidation, not a diagnosis. Sep 21 recovery rebounded: sleep 9:30, score 93, HRV 101 / weekly 94 balanced, RHR 47 and readiness 70 morning / 75 later. One better night supports recovery but does not confirm local muscle readiness. Strength on Sep 7, 8, 12 and 17 is recorded; squat/deadlift content and current limitations remain unconfirmed."
+    note: "Athlete reports a bad sore throat and illness-related missed weekend sessions. Recorded this week: 22.51 run miles, 81.6 min strength, 36.1 min swim and 106.8 min soccer. Tuesday run RPE 8/load ~308 and Friday soccer load ~226 were substantial work before the rest days. HRV Sep 22–25 fell 122 → 85 → 71 → 67; RHR 44 → 51 → 50 → 53. These are context, not a diagnosis. Sep 26–27 wellness/recovery is unavailable, so there is no current readiness claim. No catch-up work. Race-week progression is conditional on symptoms and response over 24 h; strength/cross-training do not substitute for illness rest."
   },
   week: {
-    label: "SEP 7 — SEP 27 · SEP 21–27 PLANNED",
-    targetMiles: 50.37,
+    label: "THROUGH OCT 4 · RACE WEEK CONDITIONAL",
+    targetMiles: 22.51,
     days: [
       { date: "2026-09-07", day: "Mon", miles: 0, type: "rest", title: "Strength + row + swim", detail: "44 min strength · 11 min row · 1,100 m swim · load 96", completed: true, weekMarker: "Last week" },
       { date: "2026-09-08", day: "Tue", miles: 7.55, type: "easy", title: "Easy + strides complete", detail: "10:35/mi · HR 151 · 4 fast segments · strength before", completed: true },
@@ -129,108 +129,458 @@ window.TRAINING_DATA = {
         }
       },
       {
-        date: "2026-09-21", day: "Mon", miles: 0, type: "rest", title: "Upper A + recovery swim", detail: "Upper A scheduled · 20–30 min gentle swim · run-rest", weekMarker: "Current week · recovery-gated",
-        workout: {
-          date: "2026-09-21", type: "rest", title: "Upper A + gentle swim",
-          details: [
-            { label: "Swim", value: "20–30 min relaxed RPE 1–2; rest instead if exhausted or unwell" },
-            { label: "Upper", value: "Upper A introduction dose: chest passes 2 × 3; bench, pull-up, supported row and seated press 2 × 5–6; Pallof 1 × 8/side. RPE 6–7; scheduled 30–40 min" },
-            { label: "Running", value: "Rest" },
-            { label: "Week budget", value: "Up to 45 mi without soccer / 39 with it; 90–100 min cross-training plus Mon Upper A / Tue Lower / Thu Upper B. Do not chase 55." },
-            { label: "Recovery", value: "Eat full recovery meals, hydrate and prioritize sleep; no compensatory calorie restriction" },
-            { label: "Tuesday priority", value: "Lower strength first. Run intensity/volume adjusts around the lifting appointment." }
+        "date": "2026-09-21",
+        "day": "Mon",
+        "miles": 0,
+        "type": "rest",
+        "title": "Strength + swim recorded",
+        "detail": "47 min strength + 36 min / 1,225 m swim",
+        "completed": true,
+        "weekMarker": "Sep 21–27 · illness-adjusted",
+        "workout": {
+          "date": "2026-09-21",
+          "type": "rest",
+          "title": "Strength + swim recorded",
+          "details": [
+            {
+              "label": "Strength",
+              "value": "47:20; exercises not verified"
+            },
+            {
+              "label": "Swim",
+              "value": "1,225 m in 36:06; HR 126"
+            }
           ],
-          purpose: "Consolidate a 50.37-mile week plus soccer/strength. Preserve the balanced development schedule without automatically raising workload after the longest run of this block."
+          "purpose": "Recorded work, not confirmation of the exact prescribed exercise list."
         }
       },
       {
-        date: "2026-09-22", day: "Tue", miles: 8, type: "quality", title: "Lower + controlled run", detail: "Lower first · run ≥6 h later · up to 8 mi", key: true,
-        workout: {
-          date: "2026-09-22", type: "quality", title: "Lower strength first + controlled run",
-          details: [
-            { label: "Total", value: "About 8 mi including warm-up, recoveries and easy cooldown" },
-            { label: "Warm-up", value: "2 mi easy + familiar drills + 4 × 15 sec relaxed pickups with full easy recovery" },
-            { label: "Work", value: "3 × 8 min, 2 min easy jog; RPE 6–7, short phrases, finish with another rep available" },
-            { label: "Pacing", value: "Start clearly easier than Sep 16; no fixed target or HR cap. Slow if effort rises beyond controlled." },
-            { label: "Lower first", value: "Intro: jumps 2 × 3; light clean technique 3 × 2; front squat 2 × 3 RPE 6; single-leg squat 1 × 5/leg; RDL 1 × 5; curl 1 × 8; standing/seated calf 1 × 8/10. New skills use light coached practice." },
-            { label: "Run adjustment", value: "Run ≥6 h after lower. If the combined day makes controlled quality impractical, use 6 easy. Friday may become threshold instead of VO2/soccer; no extra quality Wednesday." },
-            { label: "Fixed appointment", value: "Lower is scheduled regardless of Friday soccer. Ordinary fatigue changes lifting dose and endurance load, not the existence of leg day. Injury/illness requires specific modification." }
+        "date": "2026-09-22",
+        "day": "Tue",
+        "miles": 9.3,
+        "type": "quality",
+        "title": "Treadmill quality recorded",
+        "detail": "9.30 mi · recorded RPE 8 · HR 169 / max 203",
+        "completed": true,
+        "key": true,
+        "workout": {
+          "date": "2026-09-22",
+          "type": "quality",
+          "title": "Treadmill quality recorded",
+          "details": [
+            {
+              "label": "Run",
+              "value": "9.30 saved miles in 1:19:41; HR 169 avg / 203 max; load ~308"
+            },
+            {
+              "label": "Effort",
+              "value": "Recorded RPE 8; belt speeds and work intervals unconfirmed"
+            },
+            {
+              "label": "Data limits",
+              "value": "Raw laps ~8.64 mi vs saved 9.30; no pace-based race prediction"
+            },
+            {
+              "label": "Strength",
+              "value": "No separate strength activity recorded Tuesday; not proof none occurred"
+            }
           ],
-          purpose: "Develop lower-body power and strength as a standing priority. Keep any later threshold work controlled; adjust the run and Friday intensity rather than sacrificing lower training."
+          "purpose": "A substantial quality stimulus was already completed. Do not replace missed sessions with another hard effort while recovering from illness."
         }
       },
       {
-        date: "2026-09-23", day: "Wed", miles: 8, type: "easy", title: "Easy + aerobic bike", detail: "8 easy + 45 min easy bike · separate sessions",
-        workout: {
-          date: "2026-09-23", type: "easy", title: "8 easy miles + 45-minute bike",
-          details: [
-            { label: "Run", value: "8 mi conversational RPE 2–3; no strides" },
-            { label: "Bike", value: "45 min RPE 2–3, light gearing; roughly 100–120 W only if genuinely easy" },
-            { label: "Environment", value: "Cooler daylight or indoor fan; do not force hot afternoon riding or unlit routes" },
-            { label: "Adjustment", value: "Separate by several hours. Shorten for persistent leg heaviness; do not chase watts." }
+        "date": "2026-09-23",
+        "day": "Wed",
+        "miles": 5,
+        "type": "easy",
+        "title": "Strength + easy run recorded",
+        "detail": "34 min strength + 5.00 mi / HR 155",
+        "completed": true,
+        "workout": {
+          "date": "2026-09-23",
+          "type": "easy",
+          "title": "Strength + easy run recorded",
+          "details": [
+            {
+              "label": "Strength",
+              "value": "34:17, HR 123; exercise content unconfirmed"
+            },
+            {
+              "label": "Run",
+              "value": "5.00 saved miles in 58:30, HR 155 / max 170"
+            },
+            {
+              "label": "Bike",
+              "value": "No cycling activity recorded"
+            }
           ],
-          purpose: "Add low-impact aerobic time without turning an easy day into another quality session. Check the response to Tuesday lifting."
+          "purpose": "Count the actual combined work; do not invent lower-lifting content."
         }
       },
       {
-        date: "2026-09-24", day: "Thu", miles: 7, type: "easy", title: "Upper B + easy + swim", detail: "Upper B scheduled · up to 7 easy + 25 min swim",
-        workout: {
-          date: "2026-09-24", type: "easy", title: "Upper B + easy run + swim",
-          details: [
-            { label: "Run", value: "7 mi RPE 2–3, no fast finish" },
-            { label: "Swim", value: "25 min relaxed RPE 2; no intervals or hard kick sets" },
-            { label: "Upper B", value: "Upper B introduction dose: kneeling throws 2 × 3/side; seated press, incline press, chin-up and row 2 × 5–6; lateral raise 1 × 10; side plank 1 × 20 sec/side. Scheduled 30–40 min, RPE 6–7" }
+        "date": "2026-09-24",
+        "day": "Thu",
+        "miles": 8.21,
+        "type": "easy",
+        "title": "Treadmill run recorded",
+        "detail": "8.21 mi · 1:24:20 · HR 150 / max 162",
+        "completed": true,
+        "workout": {
+          "date": "2026-09-24",
+          "type": "easy",
+          "title": "Treadmill run recorded",
+          "details": [
+            {
+              "label": "Run",
+              "value": "8.21 saved miles in 1:24:20; load ~69"
+            },
+            {
+              "label": "Other work",
+              "value": "No separate strength or swim activity recorded; unrecorded work remains possible"
+            }
           ],
-          purpose: "Complete Upper B and keep endurance easy. Shorten easy running first if total session time/load needs reducing."
+          "purpose": "Useful aerobic running before the reported weekend illness."
         }
       },
       {
-        date: "2026-09-25", day: "Fri", miles: 6, type: "quality", title: "Aerobic power OR soccer", detail: "4 × 3 min / 3 min easy only if recovered and no soccer", key: true,
-        workout: {
-          date: "2026-09-25", type: "quality", title: "Second quality slot: 4 × 3 minutes",
-          details: [
-            { label: "Total", value: "About 6 mi with ≥2 mi warm-up and easy cooldown" },
-            { label: "Work", value: "4 × 3 min at repeatable RPE 8, 3 min easy jog; no sprints, no final-rep time trial" },
-            { label: "Gate", value: "Only if Tuesday stayed controlled and Thursday legs/easy effort are normal; no soccer that day" },
-            { label: "If Tuesday deferred", value: "If recovered and no soccer, use 3 × 8 min controlled / 2 min jog instead, ~7 mi total; skip VO2 this week" },
-            { label: "If soccer", value: "Soccer replaces this session; no run. Week becomes 39 mi, without make-up miles." },
-            { label: "If fatigue", value: "No intervals: 4–6 easy or rest according to symptoms; reassess the combined workload" }
+        "date": "2026-09-25",
+        "day": "Fri",
+        "miles": 0,
+        "type": "quality",
+        "title": "Soccer recorded",
+        "detail": "1:46:47 · HR 149 / max 207 · load ~226",
+        "completed": true,
+        "workout": {
+          "date": "2026-09-25",
+          "type": "quality",
+          "title": "Soccer recorded",
+          "details": [
+            {
+              "label": "Soccer",
+              "value": "1:46:47 timer; ~3.73 mi movement excluded from running mileage"
+            },
+            {
+              "label": "HR / load",
+              "value": "149 avg / 207 max; Garmin load ~226"
+            },
+            {
+              "label": "Context",
+              "value": "Symptom onset relative to soccer is unknown; do not assume you knowingly trained sick"
+            }
           ],
-          purpose: "Introduce a small faster-running dose targeting aerobic power and mechanics. Soccer uses the same recovery slot, but does not replicate this adaptation. No fast-finish long run as a third quality session."
+          "purpose": "Soccer was a substantial additional stressor this week, not a rest day."
         }
       },
       {
-        date: "2026-09-26", day: "Sat", miles: 5, type: "easy", title: "5 recovery miles", detail: "RPE 2 · recover after Friday; lower appointment is Tuesday",
-        workout: {
-          date: "2026-09-26", type: "easy", title: "5 recovery miles",
-          details: [
-            { label: "Run", value: "5 mi very easy; shorten/rest if soccer left soreness or altered mechanics" },
-            { label: "Strength schedule", value: "This week’s lower appointment is Tuesday. No extra lower workout today; preserve the Mon / Tue / Thu split." }
+        "date": "2026-09-26",
+        "day": "Sat",
+        "miles": 0,
+        "type": "rest",
+        "title": "Planned run cancelled · illness",
+        "detail": "Bad sore throat reported; no activity synced",
+        "cancelled": true,
+        "workout": {
+          "date": "2026-09-26",
+          "type": "rest",
+          "title": "Planned run cancelled · illness",
+          "details": [
+            {
+              "label": "Plan",
+              "value": "Recovery, not 5 make-up miles"
+            },
+            {
+              "label": "Record",
+              "value": "No activity recorded; illness-related missed sessions reported"
+            }
           ],
-          purpose: "Absorb Friday's work and preserve a comfortable Sunday long run."
+          "purpose": "Protect recovery; do not transfer this run into race week."
         }
       },
       {
-        date: "2026-09-27", day: "Sun", miles: 11, type: "long", title: "11 easy long run", detail: "No fast finish · race-week reduction follows", key: true,
-        workout: {
-          date: "2026-09-27", type: "long", title: "11 easy miles",
-          details: [
-            { label: "Run", value: "11 mi conversational RPE 2–3; no pace test" },
-            { label: "Fuel", value: "Eat beforehand; 30–45 g carbohydrate/hour plus fluids" },
-            { label: "Next phase", value: "Reduce race-week volume; resume development after recovery from the Oct 4 benchmark" }
+        "date": "2026-09-27",
+        "day": "Sun",
+        "miles": 0,
+        "type": "rest",
+        "title": "Long run cancelled · illness",
+        "detail": "No 11-mile catch-up · current recovery data missing",
+        "cancelled": true,
+        "workout": {
+          "date": "2026-09-27",
+          "type": "rest",
+          "title": "Long run cancelled · illness",
+          "details": [
+            {
+              "label": "Today",
+              "value": "Rest from training while sore throat remains bad"
+            },
+            {
+              "label": "Missing data",
+              "value": "Sep 26–27 sleep/HRV/readiness unavailable at this query; Friday values are not current"
+            },
+            {
+              "label": "Medical check",
+              "value": "Prompt assessment for severe/worsening throat, fever or difficulty drinking. Emergency care for breathing difficulty or inability to swallow."
+            }
           ],
-          purpose: "Keep aerobic consistency with a shorter long run while balancing the added quality and strength. Do not increase weekly mileage and supplementary workload simultaneously."
+          "purpose": "Health determines return, not a watch score or weekly mileage target."
+        }
+      },
+      {
+        "date": "2026-09-28",
+        "day": "Mon",
+        "miles": 0,
+        "type": "rest",
+        "title": "Rest + symptom check",
+        "detail": "No run, swim, bike or loaded Upper A",
+        "weekMarker": "Race week · symptom-led",
+        "workout": {
+          "date": "2026-09-28",
+          "type": "rest",
+          "title": "Rest + symptom check",
+          "details": [
+            {
+              "label": "Training",
+              "value": "Rest; comfortable everyday movement only"
+            },
+            {
+              "label": "Strength",
+              "value": "Upper A appointment becomes a recovery check; no catch-up lifting"
+            },
+            {
+              "label": "Return gate",
+              "value": "Only once symptoms are clearly improving and mild, normal daily activity/eating/drinking feel comfortable, fever-free ≥24 h without fever reducers, and no chest symptoms, body aches or marked fatigue. This is not race clearance."
+            },
+            {
+              "label": "Support",
+              "value": "Normal meals/carbohydrate/protein, fluids and sleep; no intentional deficit"
+            },
+            {
+              "label": "Medical",
+              "value": "Severe/persistent/worsening throat warrants clinical assessment; discuss COVID/strep testing as appropriate"
+            }
+          ],
+          "purpose": "Illness-specific exception to the fixed split. Long-term Upper/Lower/Upper remains the default after recovery."
+        }
+      },
+      {
+        "date": "2026-09-29",
+        "day": "Tue",
+        "miles": 0,
+        "type": "easy",
+        "title": "10–20-minute return test OR rest",
+        "detail": "First test only if mild/improving and otherwise well",
+        "distanceText": "10–20 min",
+        "workout": {
+          "date": "2026-09-29",
+          "type": "easy",
+          "title": "10–20-minute return test OR rest",
+          "details": [
+            {
+              "label": "Before starting",
+              "value": "Only once symptoms are clearly improving and mild, normal daily activity/eating/drinking feel comfortable, fever-free ≥24 h without fever reducers, and no chest symptoms, body aches or marked fatigue. This is not race clearance."
+            },
+            {
+              "label": "Test",
+              "value": "10–20 min very easy walk/jog, conversational RPE 1–2; no pace target"
+            },
+            {
+              "label": "Strength",
+              "value": "Lower appointment is a recovery check, not jumps, cleans or loading during return testing"
+            },
+            {
+              "label": "Stop / monitor",
+              "value": "Stop for chest discomfort, unusual breathlessness, palpitations, dizziness or disproportionate fatigue/effort; seek medical advice. Check during, after and the following 24 h."
+            },
+            {
+              "label": "If not ready",
+              "value": "Rest; move the first test later. Do not squeeze subsequent steps together."
+            }
+          ],
+          "purpose": "Assess tolerance, not fitness. Do not combine the first return test with a gym session."
+        }
+      },
+      {
+        "date": "2026-09-30",
+        "day": "Wed",
+        "miles": 0,
+        "type": "easy",
+        "title": "25–35 easy minutes OR repeat test",
+        "detail": "Only after 24 h without a setback from first test",
+        "distanceText": "25–35 min",
+        "workout": {
+          "date": "2026-09-30",
+          "type": "easy",
+          "title": "25–35 easy minutes OR repeat test",
+          "details": [
+            {
+              "label": "Run",
+              "value": "25–35 min RPE 2 if first test and next-day response were normal"
+            },
+            {
+              "label": "If delayed",
+              "value": "If this is the first healthy day, only the 10–20 min test; otherwise rest"
+            },
+            {
+              "label": "Strength / cross-training",
+              "value": "No make-up sessions; no extra bike/swim volume"
+            },
+            {
+              "label": "Monitoring",
+              "value": "Stop for chest discomfort, unusual breathlessness, palpitations, dizziness or disproportionate fatigue/effort; seek medical advice. Check during, after and the following 24 h."
+            }
+          ],
+          "purpose": "Progress easy duration only when the previous step was tolerated."
+        }
+      },
+      {
+        "date": "2026-10-01",
+        "day": "Thu",
+        "miles": 0,
+        "type": "easy",
+        "title": "25–35 easy · optional short strides",
+        "detail": "Strides only if recovered and two easy outings tolerated",
+        "distanceText": "25–35 min",
+        "workout": {
+          "date": "2026-10-01",
+          "type": "easy",
+          "title": "25–35 easy · optional short strides",
+          "details": [
+            {
+              "label": "Run",
+              "value": "25–35 min RPE 2"
+            },
+            {
+              "label": "Strides",
+              "value": "Optional 4 × 15 sec relaxed, full 60–90 sec easy recovery; only fully recovered with two normal easy outings and no delayed symptoms"
+            },
+            {
+              "label": "Upper B",
+              "value": "If fully recovered and graded return tolerated: 10–15 min familiar bench/pull/row, 1 light set each at RPE ≤5. Otherwise recovery check only."
+            },
+            {
+              "label": "Excluded",
+              "value": "No threshold, VO2, race-pace test, heavy legs, new lifts or plyometrics"
+            }
+          ],
+          "purpose": "A small return to familiar movement, not a last-minute fitness workout."
+        }
+      },
+      {
+        "date": "2026-10-02",
+        "day": "Fri",
+        "miles": 0,
+        "type": "rest",
+        "title": "Rest · no soccer",
+        "detail": "No make-up running, lifting or cross-training",
+        "workout": {
+          "date": "2026-10-02",
+          "type": "rest",
+          "title": "Rest · no soccer",
+          "details": [
+            {
+              "label": "Training",
+              "value": "Rest; no soccer"
+            },
+            {
+              "label": "Race decision",
+              "value": "Review symptoms, normal daily function and response to easy runs"
+            },
+            {
+              "label": "If still ill",
+              "value": "Contact a clinician if symptoms persist/worsen. Do not plan to race through fever, systemic or chest symptoms."
+            }
+          ],
+          "purpose": "Preserve recovery and decide on participation based on health, not sunk training time."
+        }
+      },
+      {
+        "date": "2026-10-03",
+        "day": "Sat",
+        "miles": 0,
+        "type": "easy",
+        "title": "15–20-minute shakeout OR rest",
+        "detail": "Only if recovered; race decision remains conditional",
+        "distanceText": "15–20 min",
+        "workout": {
+          "date": "2026-10-03",
+          "type": "easy",
+          "title": "15–20-minute shakeout OR rest",
+          "details": [
+            {
+              "label": "Run",
+              "value": "15–20 min easy if feeling normal; rest is also acceptable"
+            },
+            {
+              "label": "Race gate",
+              "value": "Symptoms resolved or only minimal residual throat/nasal symptoms, normal energy/intake, no fever/systemic/chest symptoms and repeated easy exercise tolerated without delayed worsening"
+            },
+            {
+              "label": "If first return only today",
+              "value": "Do not use one successful short jog to clear a hard half marathon tomorrow"
+            },
+            {
+              "label": "Pacing",
+              "value": "1:38 is an old provisional target, not a commitment after illness. Decide from recovery, not a catch-up test."
+            }
+          ],
+          "purpose": "No final fitness test. If return remains incomplete, skip the race rather than forcing the calendar."
+        }
+      },
+      {
+        "date": "2026-10-04",
+        "day": "Sun",
+        "miles": 0,
+        "type": "quality",
+        "title": "San Jose HM · conditional start",
+        "detail": "13.1 mi only if recovered; DNS is an acceptable outcome",
+        "key": true,
+        "distanceText": "13.1 if well",
+        "workout": {
+          "date": "2026-10-04",
+          "type": "quality",
+          "title": "San Jose HM · conditional start",
+          "details": [
+            {
+              "label": "Start only if",
+              "value": "Recovered, graded easy return tolerated and no warning symptoms; seek clinician guidance if illness was more than mild or uncertainty remains"
+            },
+            {
+              "label": "Do not start",
+              "value": "Fever, body aches, marked fatigue, chest symptoms, abnormal exercise response or incomplete return to normal function"
+            },
+            {
+              "label": "Race execution",
+              "value": "Do not force the former 1:38 target. Stop for chest discomfort, unusual breathlessness, dizziness, palpitations or feeling unwell."
+            },
+            {
+              "label": "If not ready",
+              "value": "DNS; no substitute long run or hard workout"
+            }
+          ],
+          "purpose": "Long-term health outranks this checkpoint. No current fitness estimate or race clearance is inferred from missing Garmin recovery data."
         }
       }
     ]
   },
   strength: {
-    "activePhase": "now",
-    "intro": "Two upper sessions and one lower session every week. Power cleans, front squats and single-leg work anchor lower development; explosive throws and progressive pressing/pulling train the upper body. Long-term strength, power and health are standing priorities. Endurance work is planned around these appointments.",
+    "activePhase": "illness",
+    "intro": "Upper / Lower / Upper remains your long-term split. Active illness is a specific exception: recovery checks replace loading until return is appropriate. Do not catch up missed lifts or substitute gym/swim/bike work for rest. The dated illness plan overrides the healthy race-week preview.",
     "phases": [
       {
+        "id": "illness",
+        "label": "Current · illness / race week",
+        "title": "Recover first · retain the long-term split",
+        "summary": "No loaded training with a bad sore throat, fever, systemic or chest symptoms. Preserve the appointments as health checks; do not enforce attendance through illness. Missed strength does not move into Friday/Saturday.",
+        "schedule": "Mon Sep 28 Upper A: recovery check/rest. Tue Sep 29 Lower: recovery check; first easy return test if eligible, without loaded legs. Thu Oct 1 Upper B: only brief light work if recovered and easy return tolerated. Reassess after Oct 4 before restoring the usual split.",
+        "sessions": [
+          { "id": "ill-upper-a", "day": "Mon Sep 28", "title": "Upper A · illness hold", "tone": "upper", "timing": "Rest from training; no missed-set compensation.", "exercises": [{ "name": "Symptom / recovery check", "dose": "No loaded sets", "note": "Check fever, throat severity, energy, eating/drinking and any chest symptoms. Comfortable daily movement is enough." }] },
+          { "id": "ill-lower", "day": "Tue Sep 29", "title": "Lower · recovery check", "tone": "lower", "timing": "No jumps, cleans or loaded leg session during the first return test. This is an illness exception, not a permanent removal of lower work.", "exercises": [{ "name": "Return assessment", "dose": "No loaded sets", "note": "If eligible, use the calendar's 10–20 min walk/jog test only. Otherwise rest. Do not replace missed lower work late in race week." }] },
+          { "id": "ill-upper-b", "day": "Thu Oct 1", "title": "Upper B · conditional light touch", "tone": "upper", "timing": "10–15 min only if recovered and graded easy return tolerated without delayed symptoms. Otherwise rest.", "exercises": [{ "name": "Familiar press, pull and supported row", "dose": "1 light set each · RPE ≤5", "note": "No explosive throws, novel exercises, grinders or progression. Avoid shared gym exposure while infectious; staying home takes priority." }] }
+        ]
+      },
+      {
         "id": "now",
-        "label": "Now · Sep 21–27",
+        "label": "Prior · Sep 21–27",
         "title": "Current plan · Upper / Lower / Upper",
         "summary": "The split starts this week. Introductory loads establish clean, front-squat and single-leg technique without jumping straight to full volume before San Jose. Prior clean experience and working weights remain unconfirmed; use light coached technique for any new lift. RPE and technique regulate load, not whether leg day exists.",
         "schedule": "Monday Upper A • Tuesday Lower • Thursday Upper B. All three are scheduled. Soccer never replaces lower lifting. Tuesday lower comes first, ideally ≥6 h before endurance; fuel between sessions. If the combined day is too demanding, make the run easy or reduce run volume. Friday soccer replaces Friday running intensity. If Tuesday threshold is moved to Friday, it replaces Friday intervals and soccer that week; do not stack them. No extra lower day is added.",
@@ -371,7 +721,7 @@ window.TRAINING_DATA = {
       },
       {
         "id": "race",
-        "label": "Race week · Sep 28–Oct 4",
+        "label": "Healthy race-week template · superseded",
         "title": "Preview · same split, smaller dose",
         "summary": "Upper Sep 28, lower Sep 29, upper Oct 1. Keep the appointments and reduce sets/loading for Oct 4. No heavy progression or novel high-impact drills in race week.",
         "schedule": "Mon Upper A • Tue Lower • Thu Upper B. This is a planned taper within the same split. Oct 5/6/8 remain the next strength appointments: use race-dose upper work and a brief lower recovery/technique session on Oct 6, not a loaded workout through race-related pain. Review Oct 12 before building loads; recovery changes the content of the appointment.",
@@ -824,7 +1174,7 @@ window.TRAINING_DATA = {
       }
     ],
     "guardrails": [
-      "Fixed every week: Monday upper, Tuesday lower, Thursday upper",
+      "Default split: Monday upper, Tuesday lower, Thursday upper; active illness suspends loading",
       "Soccer and endurance volume do not cancel the lower session",
       "Power first; load follows speed, catch quality and control",
       "Planned deloads reduce sets; the weekly split stays in place"
@@ -912,20 +1262,19 @@ window.TRAINING_DATA = {
     { label: "Aug 31", miles: 38.6, state: "complete" },
     { label: "Sep 7", miles: 44.4, state: "complete" },
     { label: "Sep 14", miles: 50.4, state: "complete" },
-    { label: "Sep 21", miles: 45, state: "planned" },
-    { label: "Race", miles: 27, state: "race" }
+    { label: "Sep 21", miles: 22.5, state: "complete" }
   ],
   rules: [
     { icon: "↘", title: "Easy means easy", text: "Use conversational effort. Pace can float with heat and fatigue." },
     { icon: "◇", title: "Fuel the work", text: "Do not create the calorie deficit around threshold or long-run sessions." },
-    { icon: "⚑", title: "Two quality slots, not three", text: "Tuesday controlled threshold; Friday modest aerobic-power work if no soccer and recovered. Soccer uses Friday's recovery budget but is not a VO2 substitute. Keep the long run easy." },
-    { icon: "⌁", title: "Protect weekly lower training", text: "Monday Upper A, Tuesday Lower, Thursday Upper B are fixed. Soccer does not replace lower lifting. Plan endurance around strength; use scheduled taper/deload doses without deleting sessions." },
-    { icon: "+", title: "Schedule aerobic support", text: "Next week: Mon 20–30-min swim, Wed 45-min bike, Thu 25-min swim = 90–100 min. Keep it easy; do not increase running and supplemental volume together." },
+    { icon: "⚑", title: "No catch-up intensity", text: "No threshold, VO2, long run or Friday soccer this week. Optional relaxed strides only after normal graded return. Do not race with fever, systemic/chest symptoms or abnormal exercise responses." },
+    { icon: "⌁", title: "Illness exception, not abandonment", text: "The Upper/Lower/Upper split stays the long-term default. Current illness replaces loading with recovery checks. No late-week make-up lifts." },
+    { icon: "+", title: "Return step by step", text: "First eligible outing: 10–20 min easy. Monitor during, after and for 24 h before progressing. No extra bike/swim volume to replace missed running; avoid exposing others while infectious." },
     { icon: "↗", title: "Build toward 65 mpw", text: "65 mpw remains a possible long-term running objective, not a requirement during 70.3 training. Tokyo and a 2027 70.3 are athlete-confirmed; event details are pending. Set sustainable run volume alongside swim/bike demands and three lifting appointments." }
   ]
 };
 
 // Use the timeline prescription as the single source for the next-session panel.
 window.TRAINING_DATA.currentWorkout = window.TRAINING_DATA.week.days.find(
-  (day) => day.date === "2026-09-22"
+  (day) => day.date === "2026-09-28"
 ).workout;

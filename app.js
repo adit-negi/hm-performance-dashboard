@@ -88,11 +88,11 @@
               <div><strong>${day.day}</strong><span>${formatDate(day.date).split(", ")[1]}</span></div>
               ${day.key ? '<span class="key-label">KEY</span>' : ""}
             </div>
-            <div class="day-distance">${day.miles ? `<strong>${day.miles}</strong><span>mi</span>` : '<strong class="rest-mark">—</strong>'}</div>
+            <div class="day-distance">${day.distanceText ? `<strong style="font-size:1.4rem">${day.distanceText}</strong>` : day.miles ? `<strong>${day.miles}</strong><span>mi</span>` : '<strong class="rest-mark">—</strong>'}</div>
             <h3>${day.title}</h3>
             <p>${day.detail}</p>
-            <button class="complete-toggle" data-date="${day.date}" aria-pressed="${completed}">
-              <span>${completed ? "✓" : ""}</span>${completed ? "Completed" : "Mark complete"}
+            <button class="complete-toggle" data-date="${day.date}" aria-pressed="${completed}" ${day.cancelled ? "disabled" : ""}>
+              <span>${completed ? "✓" : ""}</span>${day.cancelled ? "Cancelled · illness" : completed ? "Completed" : "Mark complete"}
             </button>
           </article>`;
       })
@@ -258,7 +258,7 @@
   renderVolume();
   renderRules();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js?v=20260922-upper-lower").then((registration) => registration.update());
+    navigator.serviceWorker.register("./sw.js?v=20260927-illness").then((registration) => registration.update());
   }
   window.scrollTo(0, 0);
 })();
