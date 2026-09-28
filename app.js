@@ -79,7 +79,7 @@
     $("#weekMiles").textContent = data.week.targetMiles;
     $("#weekGrid").innerHTML = data.week.days
       .map((day) => {
-        const completed = Boolean(day.completed || stored[day.date]);
+        const completed = !day.cancelled && Boolean(day.completed || stored[day.date]);
         return `
           <article class="day-card ${day.type} ${day.key ? "key" : ""} ${completed ? "completed" : ""} ${selectedDate === day.date ? "selected" : ""}"
             data-session-date="${day.date}" role="button" tabindex="0" aria-label="Open ${day.day} ${day.title}" aria-pressed="${selectedDate === day.date}">
@@ -117,7 +117,7 @@
         item.classList.toggle("selected", selected);
         item.setAttribute("aria-pressed", selected);
       });
-      renderCurrentWorkout(workoutFromDay(day), Boolean(day.completed || stored[day.date]));
+      renderCurrentWorkout(workoutFromDay(day), !day.cancelled && Boolean(day.completed || stored[day.date]));
       document.querySelector(".next-card").scrollIntoView({ behavior: "smooth", block: "center" });
     };
 
@@ -132,7 +132,7 @@
     });
 
     const selectedDay = data.week.days.find((day) => day.date === selectedDate);
-    if (selectedDay) renderCurrentWorkout(workoutFromDay(selectedDay), Boolean(selectedDay.completed || stored[selectedDate]));
+    if (selectedDay) renderCurrentWorkout(workoutFromDay(selectedDay), !selectedDay.cancelled && Boolean(selectedDay.completed || stored[selectedDate]));
 
     requestAnimationFrame(() => {
       const active = document.querySelector(".day-card.selected");
